@@ -65,9 +65,7 @@ public class XMLParser { //clean code n shit.
 
     private String[] populateNewArray(String[] array, int newSize) {
         String[] tempArray = new String[newSize];
-        for (int i = 0; i < newSize; i++) {
-            tempArray[i] = array[i];
-        }
+        System.arraycopy(array, 0, tempArray, 0, newSize);
         return tempArray;
     }
 
