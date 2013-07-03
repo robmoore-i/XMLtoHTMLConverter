@@ -7,10 +7,10 @@ public class XMLParserTest {
     @Test
     public void canParseOpeningTagData() {
         XMLParser parser = new XMLParser();
-        XMLTag xmlTag = parser.getDataFromOpeningTag("<option name=\"datasrc-port\" type=\"Integer\" default=\"0\" java=\"true\">");
+        XMLTag xmlTag = parser.getDataFromOpeningTag("<option name=\"data-src-port\" type=\"Integer\" default=\"0\" java=\"true\">");
         XMLData[] data = xmlTag.data;
         assertThat(data[0].name, equalTo("name"));
-        assertThat(data[0].value, equalTo("datasrc-port"));
+        assertThat(data[0].value, equalTo("data-src-port"));
         assertThat(xmlTag.tagClass, equalTo("option"));
     }
 
@@ -35,7 +35,7 @@ public class XMLParserTest {
 }
 
 /*
-<option name="datasrc-port" type="Integer" default="0" java="true">
+<option name="data-src-port" type="Integer" default="0" java="true">
     <option-description>
         <!
             [CDATA

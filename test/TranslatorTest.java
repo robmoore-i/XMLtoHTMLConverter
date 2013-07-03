@@ -7,6 +7,6 @@ public class TranslatorTest {
     @Test
     public void canRemoveCDATAFromXML() {
         Translator translator = new Translator();
-        assertThat(translator.translate("<![CDATA[blahblahblah]]>"), equalTo("blahblahblah"));
+        assertThat(translator.translate("<![CDATA[blah blah blah]]>"), equalTo("blah blah blah"));
     }
 }

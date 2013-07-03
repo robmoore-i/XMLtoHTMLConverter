@@ -1,4 +1,4 @@
-public class XMLParser { //clean code brah.
+public class XMLParser { //clean code n shit.
 
     //DONE
     public XMLTag getDataFromOpeningTag(String string) {
