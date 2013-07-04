@@ -34,9 +34,10 @@ public class XMLParserTest {
     }
 
     @Test
-    public void canGetDescriptionText() {
+    public void canGetTagClassFromFullTag() {
         XMLParser parser = new XMLParser();
-        assertThat(parser.getDescriptionText("<option><option-description><![CDATA[blah]]></option-description></option>"), equalTo("<![CDATA[blah]]>"));
+        assertThat(parser.getTagClass("<option></option>"), equalTo("option"));
+        assertThat(parser.getTagClass("<option><option-x></option-x></option>"), equalTo("option"));
     }
 }
 

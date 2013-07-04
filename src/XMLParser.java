@@ -2,7 +2,7 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
     private static final String emptyAngleBrackets = "<>";
     private static final String closingAngleBrackets = "</>";
 
-    public XMLTag getXMLTagFromOpeningTag(String string) {
+    public XMLTag getDataFromOpeningTag(String string) {
         String inputWithoutAngleBrackets = removeAngleBrackets(string);
         String tagClass = inputWithoutAngleBrackets.split(" ")[0];
         String[] tagAttributeAssignments = changeInputToNameValueFormat(inputWithoutAngleBrackets);
@@ -34,7 +34,6 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
 
     public boolean checkThatAngleBracketsBalanced(String inputString) {
         String[] stringArray = StringToArrayOfStringsRepresentingEachCharacter(inputString);
-//        String tagClass = getTagClass(inputString);
         String[] filteredStringArray = filterStringArray(closingAngleBrackets, stringArray);
         String filteredInput = StringTool.rejoinStringList(removeNulls(filteredStringArray), 0);
         return filteredInput.startsWith(emptyAngleBrackets) &&  //starts with <>
