@@ -26,11 +26,17 @@ public class XMLParserTest {
     @Test
     public void canCheckThatAngleBracketsBalanced() {
         XMLParser parser = new XMLParser();
-        assertThat(parser.checkThatAngleBracketsBalanced("<option><tag></tag></option>"), equalTo(true));
+        assertThat(parser.checkThatAngleBracketsBalanced("<option><tag-description></tag-description></option>"), equalTo(true));
         assertThat(parser.checkThatAngleBracketsBalanced("<option></option>"), equalTo(true));
         assertThat(parser.checkThatAngleBracketsBalanced("<option><option>"), equalTo(false));
         assertThat(parser.checkThatAngleBracketsBalanced("</option></option>"), equalTo(false));
         assertThat(parser.checkThatAngleBracketsBalanced("<option name=\"blah\" type=\"blah\"></option>"), equalTo(true));
+    }
+
+    @Test
+    public void canGetDescriptionText() {
+        XMLParser parser = new XMLParser();
+        assertThat(parser.getDescriptionText("<option><option-description><![CDATA[blah]]></option-description></option>"), equalTo("<![CDATA[blah]]>"));
     }
 }
 

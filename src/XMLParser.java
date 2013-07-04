@@ -1,4 +1,4 @@
-public class XMLParser { //clean code n shit.
+public class XMLParser { //clean code n shit: methods do 1 thing, name things well, write good tests.
 
     public XMLTag getDataFromOpeningTag(String string) {
         String inputWithoutAngleBrackets = removeAngleBrackets(string);
@@ -30,16 +30,24 @@ public class XMLParser { //clean code n shit.
         return removeAngleBrackets;
     }
 
-    public boolean checkThatAngleBracketsBalanced(String string) {
-        String[] stringArray = StringToArrayOfStringsRepresentingEachCharacter(string);
+    public boolean checkThatAngleBracketsBalanced(String inputString) {
+        //get the tagClass mofo
+        //
+        String[] stringArray = StringToArrayOfStringsRepresentingEachCharacter(inputString);
+        String tagClass = getTagClass(inputString);
         String filter = "<>/";
         String[] filteredStringArray = filterStringArray(filter, stringArray);
         String filteredInput = StringTool.rejoinStringList(removeNulls(filteredStringArray), 0);
         return filteredInput.startsWith("<>") &&  //starts with <>
                 filteredInput.endsWith("</>") &&   //ends with </>
-                (checkThatAngleBracketsBalanced(filteredInput.substring(2, filteredInput.length() - 3)) ||
+                (checkThatAngleBracketsBalanced(filteredInput/*unfilteredInput*/.substring(2 /* + tagClass.length()*/, inputString.length() - (3 /* + tagClass.length()*/))) ||
                         filteredInput.length() == 5); //<>Y</> Y is nothing or Y is balanced.
     } //DONE
+
+    private String getTagClass(String inputString) {
+        String tagClass = "";
+        return tagClass;
+    }
 
     private String[] StringToArrayOfStringsRepresentingEachCharacter(String string) {
         char[] charArrayOfString = string.toCharArray();
@@ -80,5 +88,10 @@ public class XMLParser { //clean code n shit.
             }
         }
         return newSize;
+    }
+
+    public String getDescriptionText(String string) {
+        //Between the tags whose tagClass is "X-description" is where the
+        return null;
     }
 }
