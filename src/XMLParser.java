@@ -1,6 +1,8 @@
 public class XMLParser { //clean code n shit: methods do 1 thing, name things well, write good tests.
+    private static final String emptyAngleBrackets = "<>";
+    private static final String closingAngleBrackets = "</>";
 
-    public XMLTag getDataFromOpeningTag(String string) {
+    public XMLTag getXMLTagFromOpeningTag(String string) {
         String inputWithoutAngleBrackets = removeAngleBrackets(string);
         String tagClass = inputWithoutAngleBrackets.split(" ")[0];
         String[] tagAttributeAssignments = changeInputToNameValueFormat(inputWithoutAngleBrackets);
@@ -31,23 +33,15 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
     }
 
     public boolean checkThatAngleBracketsBalanced(String inputString) {
-        //get the tagClass mofo
-        //
         String[] stringArray = StringToArrayOfStringsRepresentingEachCharacter(inputString);
-        String tagClass = getTagClass(inputString);
-        String filter = "<>/";
-        String[] filteredStringArray = filterStringArray(filter, stringArray);
+//        String tagClass = getTagClass(inputString);
+        String[] filteredStringArray = filterStringArray(closingAngleBrackets, stringArray);
         String filteredInput = StringTool.rejoinStringList(removeNulls(filteredStringArray), 0);
-        return filteredInput.startsWith("<>") &&  //starts with <>
-                filteredInput.endsWith("</>") &&   //ends with </>
-                (checkThatAngleBracketsBalanced(filteredInput/*unfilteredInput*/.substring(2 /* + tagClass.length()*/, inputString.length() - (3 /* + tagClass.length()*/))) ||
+        return filteredInput.startsWith(emptyAngleBrackets) &&  //starts with <>
+                filteredInput.endsWith(closingAngleBrackets) &&   //ends with </>
+                (checkThatAngleBracketsBalanced(filteredInput.substring(2, filteredInput.length() - 3)) ||
                         filteredInput.length() == 5); //<>Y</> Y is nothing or Y is balanced.
     } //DONE
-
-    private String getTagClass(String inputString) {
-        String tagClass = "";
-        return tagClass;
-    }
 
     private String[] StringToArrayOfStringsRepresentingEachCharacter(String string) {
         char[] charArrayOfString = string.toCharArray();
@@ -90,8 +84,23 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
         return newSize;
     }
 
-    public String getDescriptionText(String string) {
-        //Between the tags whose tagClass is "X-description" is where the
-        return null;
+    public String getTagClass(String inputString) {
+        int positionOfFirstClosingAngleBracket = getPositionOfFirstClosingAngleBracket(inputString);
+        String openingTag = inputString.substring(0, positionOfFirstClosingAngleBracket);
+        String inputWithoutAngleBrackets = removeAngleBrackets(openingTag);
+        return inputWithoutAngleBrackets.split(" ")[0];
+    } //DONE
+
+    private int getPositionOfFirstClosingAngleBracket(String inputString) {
+        int positionOfFirstClosingAngleBracket = 0;
+        String[] stringArray = StringToArrayOfStringsRepresentingEachCharacter(inputString);
+        for (int i = 0; i < stringArray.length; i++) {
+            String string = stringArray[i];
+            if(string.equals(">")) {
+                positionOfFirstClosingAngleBracket = i;
+                break;
+            }
+        }
+        return positionOfFirstClosingAngleBracket;
     }
 }
