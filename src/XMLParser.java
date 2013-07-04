@@ -12,8 +12,7 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
 
     private XMLData[] getXmlData(String[] tagAttributeAssignments) {
         XMLData[] xmlData = new XMLData[tagAttributeAssignments.length];
-        int j = 0;
-        for (int i = 1; i < tagAttributeAssignments.length; i++) {
+        for (int i = 1, j = 0; i < tagAttributeAssignments.length; i++) {
             xmlData[j] = new XMLData(tagAttributeAssignments[i].split("=")[0], tagAttributeAssignments[i].split("=")[1]);
             j++;
         }
@@ -42,9 +41,9 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
                         filteredInput.length() == 5); //<>Y</> Y is nothing or Y is balanced.
     } //DONE
 
-    private String getContentOfTag(String tagClass, String input) {
+    public String getContentOfTag(String tagClass, String input) {
         return input.substring(2 + tagClass.length(), input.length() - 3 - tagClass.length());
-    }
+    } //DONE
 
     private String[] StringToArrayOfStringsRepresentingEachCharacter(String string) {
         char[] charArrayOfString = string.toCharArray();
@@ -99,7 +98,7 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
         String[] stringArray = StringToArrayOfStringsRepresentingEachCharacter(inputString);
         for (int i = 0; i < stringArray.length; i++) {
             String string = stringArray[i];
-            if(string.equals(">")) {
+            if (string.equals(">")) {
                 positionOfFirstClosingAngleBracket = i;
                 break;
             }

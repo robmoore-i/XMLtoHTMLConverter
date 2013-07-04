@@ -43,6 +43,12 @@ public class XMLParserTest {
     }
 
     @Test
+    public void canGetContentOfTag() {
+        XMLParser parser = new XMLParser();
+        assertThat(parser.getContentOfTag("option", "<option>blahblahblah</option>"),equalTo("blahblahblah"));
+    }
+
+    @Test
     public void canGetDescriptionFromFullTag() {
         XMLParser parser = new XMLParser();
         XMLTranslator translator = new XMLTranslator();
