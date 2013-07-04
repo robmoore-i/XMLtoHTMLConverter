@@ -2,7 +2,7 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
     private static final String emptyAngleBrackets = "<>";
     private static final String closingAngleBrackets = "</>";
 
-    public XMLTag getDataFromOpeningTag(String string) {
+    public XMLTag getXMLTagFromOpeningTag(String string) {
         String inputWithoutAngleBrackets = removeAngleBrackets(string);
         String tagClass = inputWithoutAngleBrackets.split(" ")[0];
         String[] tagAttributeAssignments = changeInputToNameValueFormat(inputWithoutAngleBrackets);
@@ -34,13 +34,17 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
 
     public boolean checkThatAngleBracketsBalanced(String inputString) {
         String[] stringArray = StringToArrayOfStringsRepresentingEachCharacter(inputString);
-        String[] filteredStringArray = filterStringArray(closingAngleBrackets, stringArray);
+        String[] filteredStringArray = filterStringArray(">" + "<" + "/", stringArray); //three characters that form the base of the XML grammar.
         String filteredInput = StringTool.rejoinStringList(removeNulls(filteredStringArray), 0);
-        return filteredInput.startsWith(emptyAngleBrackets) &&  //starts with <>
-                filteredInput.endsWith(closingAngleBrackets) &&   //ends with </>
-                (checkThatAngleBracketsBalanced(filteredInput.substring(2, filteredInput.length() - 3)) ||
+        return filteredInput.startsWith(emptyAngleBrackets) &&
+                filteredInput.endsWith(closingAngleBrackets) &&
+                (checkThatAngleBracketsBalanced(getContentOfTag("", filteredInput)) ||
                         filteredInput.length() == 5); //<>Y</> Y is nothing or Y is balanced.
     } //DONE
+
+    private String getContentOfTag(String tagClass, String input) {
+        return input.substring(2 + tagClass.length(), input.length() - 3 - tagClass.length());
+    }
 
     private String[] StringToArrayOfStringsRepresentingEachCharacter(String string) {
         char[] charArrayOfString = string.toCharArray();
@@ -102,4 +106,13 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
         }
         return positionOfFirstClosingAngleBracket;
     }
+
+    public String getDescriptionContentFromFullTag(String input, XMLTranslator translator) {
+        String tagClass = getTagClass(input);
+        if (!tagClass.endsWith("-description")) {
+            return getDescriptionContentFromFullTag(getContentOfTag(tagClass, input), translator);
+        } else {
+            return translator.translate(getContentOfTag(tagClass, input));
+        }
+    } //DONE
 }

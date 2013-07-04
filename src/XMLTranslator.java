@@ -1,4 +1,4 @@
-public class Translator {
+public class XMLTranslator {
     public String translate(String descriptionText) {
         String editedDescription = descriptionText;
         editedDescription = removeCDATA(editedDescription);

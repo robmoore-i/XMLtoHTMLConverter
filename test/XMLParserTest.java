@@ -7,7 +7,7 @@ public class XMLParserTest {
     @Test
     public void canParseOpeningTagData() {
         XMLParser parser = new XMLParser();
-        XMLTag xmlTag = parser.getDataFromOpeningTag("<option name=\"data-src-port\" type=\"Integer\" default=\"0\" java=\"true\">");
+        XMLTag xmlTag = parser.getXMLTagFromOpeningTag("<option name=\"data-src-port\" type=\"Integer\" default=\"0\" java=\"true\">");
         XMLData[] data = xmlTag.data;
         assertThat(data[0].name, equalTo("name"));
         assertThat(data[0].value, equalTo("data-src-port"));
@@ -17,9 +17,9 @@ public class XMLParserTest {
     @Test
     public void canGetTagClassFromOpeningTag() {
         XMLParser parser = new XMLParser();
-        XMLTag xmlTag1 = parser.getDataFromOpeningTag("<option>");
+        XMLTag xmlTag1 = parser.getXMLTagFromOpeningTag("<option>");
         assertThat(xmlTag1.tagClass, equalTo("option"));
-        XMLTag xmlTag2 = parser.getDataFromOpeningTag("<tag>");
+        XMLTag xmlTag2 = parser.getXMLTagFromOpeningTag("<tag>");
         assertThat(xmlTag2.tagClass, equalTo("tag"));
     }
 
@@ -38,6 +38,16 @@ public class XMLParserTest {
         XMLParser parser = new XMLParser();
         assertThat(parser.getTagClass("<option></option>"), equalTo("option"));
         assertThat(parser.getTagClass("<option><option-x></option-x></option>"), equalTo("option"));
+        assertThat(parser.getTagClass("<option><option-description>blah</option-description></option>"), equalTo("option"));
+        assertThat(parser.getTagClass("<option-description>blah</option-description>"), equalTo("option-description"));
+    }
+
+    @Test
+    public void canGetDescriptionFromFullTag() {
+        XMLParser parser = new XMLParser();
+        XMLTranslator translator = new XMLTranslator();
+        assertThat(parser.getDescriptionContentFromFullTag("<option><option-description>blah</option-description></option>", translator), equalTo("blah"));
+        assertThat(parser.getDescriptionContentFromFullTag("<option><option-description><![CDATA[blah blah]]></option-description></option>", translator), equalTo("blah blah"));
     }
 }
 
