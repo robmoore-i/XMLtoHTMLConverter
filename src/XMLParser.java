@@ -1,17 +1,21 @@
 public class XMLParser { //clean code n shit.
 
-    //DONE
     public XMLTag getDataFromOpeningTag(String string) {
         String inputWithoutAngleBrackets = removeAngleBrackets(string);
         String tagClass = inputWithoutAngleBrackets.split(" ")[0];
-        String[] splitBySpace = changeInputToNameValueFormat(inputWithoutAngleBrackets);
-        XMLData[] xmlData = new XMLData[splitBySpace.length];
+        String[] tagAttributeAssignments = changeInputToNameValueFormat(inputWithoutAngleBrackets);
+        XMLData[] xmlData = getXmlData(tagAttributeAssignments);
+        return new XMLTag(tagClass, xmlData);
+    } //DONE
+
+    private XMLData[] getXmlData(String[] tagAttributeAssignments) {
+        XMLData[] xmlData = new XMLData[tagAttributeAssignments.length];
         int j = 0;
-        for (int i = 1; i < splitBySpace.length; i++) {
-            xmlData[j] = new XMLData(splitBySpace[i].split("=")[0], splitBySpace[i].split("=")[1]);
+        for (int i = 1; i < tagAttributeAssignments.length; i++) {
+            xmlData[j] = new XMLData(tagAttributeAssignments[i].split("=")[0], tagAttributeAssignments[i].split("=")[1]);
             j++;
         }
-        return new XMLTag(tagClass, xmlData);
+        return xmlData;
     }
 
     private String[] changeInputToNameValueFormat(String string) {
@@ -26,7 +30,6 @@ public class XMLParser { //clean code n shit.
         return removeAngleBrackets;
     }
 
-    //DONE
     public boolean checkThatAngleBracketsBalanced(String string) {
         String[] stringArray = StringToArrayOfStringsRepresentingEachCharacter(string);
         String filter = "<>/";
@@ -36,7 +39,7 @@ public class XMLParser { //clean code n shit.
                 filteredInput.endsWith("</>") &&   //ends with </>
                 (checkThatAngleBracketsBalanced(filteredInput.substring(2, filteredInput.length() - 3)) ||
                         filteredInput.length() == 5); //<>Y</> Y is nothing or Y is balanced.
-    }
+    } //DONE
 
     private String[] StringToArrayOfStringsRepresentingEachCharacter(String string) {
         char[] charArrayOfString = string.toCharArray();

@@ -30,7 +30,7 @@ public class XMLParserTest {
         assertThat(parser.checkThatAngleBracketsBalanced("<option></option>"), equalTo(true));
         assertThat(parser.checkThatAngleBracketsBalanced("<option><option>"), equalTo(false));
         assertThat(parser.checkThatAngleBracketsBalanced("</option></option>"), equalTo(false));
-        assertThat(parser.checkThatAngleBracketsBalanced("<option name=\"blah\" href=\"blah\"></option>"), equalTo(true));
+        assertThat(parser.checkThatAngleBracketsBalanced("<option name=\"blah\" type=\"blah\"></option>"), equalTo(true));
     }
 }
 
