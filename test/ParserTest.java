@@ -3,14 +3,14 @@ import org.junit.Test;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertThat;
 
-public class XMLParserTest {
+public class ParserTest {
     @Test
     public void canParseOpeningTagData() {
         XMLParser parser = new XMLParser();
-        XMLTag xmlTag = parser.getXMLTagFromOpeningTag("<option name=\"data-src-port\" type=\"Integer\" default=\"0\" java=\"true\">");
-        XMLData[] data = xmlTag.data;
-        assertThat(data[0].name, equalTo("name"));
-        assertThat(data[0].value, equalTo("data-src-port"));
+        XMLTag xmlTag = parser.getXMLTagFromOpeningTag("<option name=\"attributes-src-port\" type=\"Integer\" default=\"0\" java=\"true\">");
+        XMLAttribute[] attributes = xmlTag.attributes;
+        assertThat(attributes[0].name, equalTo("name"));
+        assertThat(attributes[0].value, equalTo("attributes-src-port"));
         assertThat(xmlTag.tagClass, equalTo("option"));
     }
 
@@ -45,7 +45,7 @@ public class XMLParserTest {
     @Test
     public void canGetContentOfTag() {
         XMLParser parser = new XMLParser();
-        assertThat(parser.getContentOfTag("option", "<option>blahblahblah</option>"),equalTo("blahblahblah"));
+        assertThat(parser.getContentOfTag("option", "<option>blah-blah-blah</option>"),equalTo("blah-blah-blah"));
     }
 
     @Test
@@ -53,12 +53,14 @@ public class XMLParserTest {
         XMLParser parser = new XMLParser();
         XMLTranslator translator = new XMLTranslator();
         assertThat(parser.getDescriptionContentFromFullTag("<option><option-description>blah</option-description></option>", translator), equalTo("blah"));
-        assertThat(parser.getDescriptionContentFromFullTag("<option><option-description><![CDATA[blah blah]]></option-description></option>", translator), equalTo("blah blah"));
+        assertThat(parser.getDescriptionContentFromFullTag("<option><option-description>blah</option-description></option>", translator), equalTo("blah"));
+        assertThat(parser.getDescriptionContentFromFullTag("<option><![CDATA[blah blah]]></option>", translator), equalTo(null));
+        assertThat(parser.getDescriptionContentFromFullTag("", translator), equalTo(null));
     }
 }
 
 /*
-<option name="data-src-port" type="Integer" default="0" java="true">
+<option name="attributes-src-port" type="Integer" default="0" java="true">
     <option-description>
         <!
             [CDATA

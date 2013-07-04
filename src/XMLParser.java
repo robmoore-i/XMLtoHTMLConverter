@@ -6,17 +6,17 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
         String inputWithoutAngleBrackets = removeAngleBrackets(string);
         String tagClass = inputWithoutAngleBrackets.split(" ")[0];
         String[] tagAttributeAssignments = changeInputToNameValueFormat(inputWithoutAngleBrackets);
-        XMLData[] xmlData = getXmlData(tagAttributeAssignments);
-        return new XMLTag(tagClass, xmlData);
+        XMLAttribute[] xmlAttributes = getXMLAttributes(tagAttributeAssignments);
+        return new XMLTag(tagClass, xmlAttributes);
     } //DONE
 
-    private XMLData[] getXmlData(String[] tagAttributeAssignments) {
-        XMLData[] xmlData = new XMLData[tagAttributeAssignments.length];
+    private XMLAttribute[] getXMLAttributes(String[] tagAttributeAssignments) {
+        XMLAttribute[] xmlAttribute = new XMLAttribute[tagAttributeAssignments.length];
         for (int i = 1, j = 0; i < tagAttributeAssignments.length; i++) {
-            xmlData[j] = new XMLData(tagAttributeAssignments[i].split("=")[0], tagAttributeAssignments[i].split("=")[1]);
+            xmlAttribute[j] = new XMLAttribute(tagAttributeAssignments[i].split("=")[0], tagAttributeAssignments[i].split("=")[1]);
             j++;
         }
-        return xmlData;
+        return xmlAttribute;
     }
 
     private String[] changeInputToNameValueFormat(String string) {
@@ -108,10 +108,14 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
 
     public String getDescriptionContentFromFullTag(String input, XMLTranslator translator) {
         String tagClass = getTagClass(input);
-        if (!tagClass.endsWith("-description")) {
-            return getDescriptionContentFromFullTag(getContentOfTag(tagClass, input), translator);
+        if (input.contains("-description")) {
+            if (!tagClass.endsWith("-description")) {
+                return getDescriptionContentFromFullTag(getContentOfTag(tagClass, input), translator);
+            } else {
+                return translator.translate(getContentOfTag(tagClass, input));
+            }
         } else {
-            return translator.translate(getContentOfTag(tagClass, input));
+            return null;
         }
     } //DONE
 }

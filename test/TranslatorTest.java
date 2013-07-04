@@ -11,6 +11,6 @@ public class TranslatorTest {
         assertThat(translator.translate("<![CDATA[]]>"), equalTo(""));
         assertThat(translator.translate("<![CDATA[blah blah blah]]>"), equalTo("blah blah blah"));
         assertThat(translator.translate("<![CDATA[!£\"\\\"$%^&*())]]>"), equalTo("!£\"\\\"$%^&*())"));
-        assertThat(translator.translate("blahblahblah"), equalTo("blahblahblah"));
+        assertThat(translator.translate("blah-blah-blah"), equalTo("blah-blah-blah"));
     }
 }

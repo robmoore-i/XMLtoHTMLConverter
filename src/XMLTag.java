@@ -1,9 +1,9 @@
 public class XMLTag {
     public final String tagClass;
-    public final XMLData[] data;
+    public final XMLAttribute[] attributes;
 
-    public XMLTag(String tagClass, XMLData[] data) {
+    public XMLTag(String tagClass, XMLAttribute[] attributes) {
         this.tagClass = tagClass;
-        this.data = data;
+        this.attributes = attributes;
     }
 }
