@@ -1,11 +1,11 @@
 public class XMLDataFormatter {
-    public String makeTable(XMLAttribute[] attributes) {
+    public String makeTableForTagAttributes(XMLAttribute[] attributes) {
         String headerRow = makeHeaderRow(attributes);
         String bodyRow = makeBodyRow(attributes);
         return "<table>" + headerRow + bodyRow + "</table>";
-    }
+    } //DONE
 
-    public String makeHeaderRow(XMLAttribute[] attributes) {
+    private String makeHeaderRow(XMLAttribute[] attributes) {
         String headerRow = "";
         for (int i = 0; i < attributes.length - 1; i++) {
             XMLAttribute attribute = attributes[i];
@@ -14,12 +14,16 @@ public class XMLDataFormatter {
         return "<tr>" + headerRow + "</tr>";
     }
 
-    public String makeBodyRow(XMLAttribute[] attributes) {
+    private String makeBodyRow(XMLAttribute[] attributes) {
         String bodyRow = "";
         for (int i = 0; i < attributes.length - 1; i++) {
             XMLAttribute attribute = attributes[i];
             bodyRow += "<td>" + attribute.value + "</td>";
         }
         return "<tr>" + bodyRow + "</tr>";
+    }
+
+    public String finishPage(String penultimateOutput) {
+        return "<!DOCTYPE html><html><body>" + penultimateOutput + "</body></html>";
     }
 }
