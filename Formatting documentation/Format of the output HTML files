@@ -1,9 +1,9 @@
 Option tag                                              : “Name” attribute as the title of a table and the other attributes are values in the table
-AcceptableValues tag (only found inside an option tag)  : Unordered list. Enum descriptions underneath each one as a sublist with 1 element
-Enum tag (only found inside acceptableValues tag)       : As an option for the drop down list
+    AcceptableValues tag (only found inside an option tag)  : Unordered list. Enum descriptions underneath each one as a sublist with 1 element
+        Enum tag (only found inside acceptableValues tag)       : As an option for the drop down list
 Group tag                                               : “Name” being a h2
 Page tag                                                : New page with the “name” attribute being a centred h1
-Top-description                                         : Header
+    Top-description                                         : Header
 Option-description                                      : Text next to the table or underneath or something
 Group-description                                       : Paragraph underneath the h2 of the group tag
 CDATA                                                   : Ordinary html (with the removal of/verbatim and things) placed near to whatever it has relevance to
