@@ -23,7 +23,7 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
         String manipulatedString = StringUtils.rejoinStringArray(string.split("\""), 0);
         if (tagClass.equals("page")) {
             manipulatedString = manipulatedString.replace(tagClass + " ", "");  //remove the tagClass0
-            manipulatedString = manipulatedString.replace(" ", "-");            //replace the space between the characters in the attribute with a hyphon
+            manipulatedString = manipulatedString.replace(" ", "-");            //replace the space between the characters in the attribute with a hyphen
             manipulatedString = tagClass + " " + manipulatedString;             //put the tagClass back
         }
         return manipulatedString.split(" ");                                //profit everywhere.
