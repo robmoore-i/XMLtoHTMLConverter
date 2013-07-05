@@ -20,7 +20,7 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
     }
 
     private String[] changeInputToNameValueFormat(String string) {
-        String splitByQuotes = StringTool.rejoinStringArray(string.split("\""), 0);
+        String splitByQuotes = StringUtils.rejoinStringArray(string.split("\""), 0);
         return splitByQuotes.split(" ");
     }
 
@@ -34,7 +34,7 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
     public boolean checkThatAngleBracketsBalanced(String inputString) {
         String[] stringArray = StringToArrayOfStringsRepresentingEachCharacter(inputString);
         String[] filteredStringArray = filterStringArray(">" + "<" + "/", stringArray); //three characters that form the base of the XML grammar.
-        String filteredInput = StringTool.rejoinStringArray(removeNulls(filteredStringArray), 0);
+        String filteredInput = StringUtils.rejoinStringArray(StringUtils.removeNulls(filteredStringArray), 0);
         return filteredInput.startsWith(emptyAngleBrackets) &&
                 filteredInput.endsWith(closingAngleBrackets) &&
                 (checkThatAngleBracketsBalanced(getContentOfTag("", filteredInput)) ||
@@ -71,27 +71,6 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
             }
         }
         return result;
-    }
-
-    private String[] removeNulls(String[] array) {
-        int newSize = findSizeOfNewArray(array);
-        return populateNewArray(array, newSize);
-    }
-
-    private String[] populateNewArray(String[] array, int newSize) {
-        String[] tempArray = new String[newSize];
-        System.arraycopy(array, 0, tempArray, 0, newSize);
-        return tempArray;
-    }
-
-    private int findSizeOfNewArray(String[] array) {
-        int newSize = 0;
-        for (String anArray : array) {
-            if (anArray != null) {
-                newSize++;
-            }
-        }
-        return newSize;
     }
 
     public String getTagClass(String inputString) {
@@ -139,5 +118,4 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
         editedDescription = editedDescription.replace("\\endverbatim", "");
         return editedDescription;
     } //DONE
-
 }
