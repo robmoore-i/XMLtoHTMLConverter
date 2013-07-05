@@ -1,6 +1,6 @@
 public class XMLAttribute {
-    public final String name;
-    public final String value;
+    public String name;
+    public String value;
 
     public XMLAttribute(String name, String value) {
         this.name = name;

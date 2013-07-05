@@ -59,6 +59,7 @@ public class VelocityXMLFormatter {
     public String formatPage_TopDescription(String input) {
         XMLTag tag = parser.getXMLTagFromOpeningTag(parser.getOpeningTagFromTotalTag(input));
         String description = parser.getDescriptionContentFromFullTag(input);
+        tag.attributes[0].value = tag.attributes[0].value.replace("-", " ");
         context.put(tag.attributes[0].name, tag.attributes[0].value);
         context.put("description", description);
         write(getTemplate("Page_TopDescription"));

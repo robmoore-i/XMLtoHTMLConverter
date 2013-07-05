@@ -17,6 +17,6 @@ public class FormatterTest {
         String pageTag =
                 "<page name=\"Name Mapping\"><top-description><![CDATA[A DataSource application can be configured to map its internal namespace to a different external namespace.]]>" +
                         "</top-description></page>";
-        assertThat(formatter.formatPage_TopDescription(pageTag), equalTo("<!DOCTYPE>\r\n<html>\r\n<body>\r\n<h1 class=\"Page_TopDescription\">Name-Mapping</h1>\r\n<p class=\"Page_TopDescription\">A DataSource application can be configured to map its internal namespace to a different external namespace.</p>\r\n</body>\r\n</html>"));
+        assertThat(formatter.formatPage_TopDescription(pageTag), equalTo("<!DOCTYPE>\r\n<html>\r\n<body>\r\n<h1 class=\"Page_TopDescription\">Name Mapping</h1>\r\n<p class=\"Page_TopDescription\">A DataSource application can be configured to map its internal namespace to a different external namespace.</p>\r\n</body>\r\n</html>"));
     }
 }
