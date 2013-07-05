@@ -20,7 +20,7 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
     }
 
     private String[] changeInputToNameValueFormat(String string) {
-        String splitByQuotes = StringTool.rejoinStringList(string.split("\""), 0);
+        String splitByQuotes = StringTool.rejoinStringArray(string.split("\""), 0);
         return splitByQuotes.split(" ");
     }
 
@@ -34,7 +34,7 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
     public boolean checkThatAngleBracketsBalanced(String inputString) {
         String[] stringArray = StringToArrayOfStringsRepresentingEachCharacter(inputString);
         String[] filteredStringArray = filterStringArray(">" + "<" + "/", stringArray); //three characters that form the base of the XML grammar.
-        String filteredInput = StringTool.rejoinStringList(removeNulls(filteredStringArray), 0);
+        String filteredInput = StringTool.rejoinStringArray(removeNulls(filteredStringArray), 0);
         return filteredInput.startsWith(emptyAngleBrackets) &&
                 filteredInput.endsWith(closingAngleBrackets) &&
                 (checkThatAngleBracketsBalanced(getContentOfTag("", filteredInput)) ||
@@ -118,16 +118,26 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
         return positionOfFirstClosingAngleBracket;
     }
 
-    public String getDescriptionContentFromFullTag(String input, XMLTranslator translator) {
+    public String getDescriptionContentFromFullTag(String input) {
         String tagClass = getTagClass(input);
         if (input.contains("-description")) {
             if (!tagClass.endsWith("-description")) {
-                return getDescriptionContentFromFullTag(getContentOfTag(tagClass, input), translator);
+                return getDescriptionContentFromFullTag(getContentOfTag(tagClass, input));
             } else {
-                return translator.translateDescription(getContentOfTag(tagClass, input));
+                return cleanDescription(getContentOfTag(tagClass, input));
             }
         } else {
             return null;
         }
     } //DONE
+
+    public String cleanDescription(String descriptionText) {
+        String editedDescription = descriptionText;
+        editedDescription = editedDescription.replace("<![CDATA[", "");
+        editedDescription = editedDescription.replace("]]>", "");
+        editedDescription = editedDescription.replace("\\verbatim", "");
+        editedDescription = editedDescription.replace("\\endverbatim", "");
+        return editedDescription;
+    } //DONE
+
 }
