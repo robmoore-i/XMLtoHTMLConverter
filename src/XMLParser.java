@@ -5,7 +5,7 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
     public XMLTag getXMLTagFromOpeningTag(String string) {
         String inputWithoutAngleBrackets = removeAngleBrackets(string);
         String tagClass = inputWithoutAngleBrackets.split(" ")[0];
-        String[] tagAttributeAssignments = changeInputToNameValueFormat(inputWithoutAngleBrackets);
+        String[] tagAttributeAssignments = changeInputToNameValueFormat(inputWithoutAngleBrackets, tagClass);
         XMLAttribute[] xmlAttributes = getXMLAttributes(tagAttributeAssignments);
         return new XMLTag(tagClass, xmlAttributes);
     } //DONE
@@ -19,10 +19,15 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
         return xmlAttribute;
     }
 
-    private String[] changeInputToNameValueFormat(String string) {
-        String splitByQuotes = StringUtils.rejoinStringArray(string.split("\""), 0);
-        return splitByQuotes.split(" ");
-    } //EDIT
+    private String[] changeInputToNameValueFormat(String string, String tagClass) {
+        String manipulatedString = StringUtils.rejoinStringArray(string.split("\""), 0);
+        if (tagClass.equals("page")) {
+            manipulatedString = manipulatedString.replace(tagClass + " ", "");  //remove the tagClass0
+            manipulatedString = manipulatedString.replace(" ", "-");            //replace the space between the characters in the attribute with a hyphon
+            manipulatedString = tagClass + " " + manipulatedString;             //put the tagClass back
+        }
+        return manipulatedString.split(" ");                                //profit everywhere.
+    }
 
     private String removeAngleBrackets(String string) {
         String removeAngleBrackets = string;

@@ -29,4 +29,10 @@ public class StringUtils {
         System.arraycopy(array, 0, tempArray, 0, newSize);
         return tempArray;
     }
+
+    public static void printArray(String[] array) {
+        for (String string : array) {
+            System.out.println(string);
+        }
+    }
 }
