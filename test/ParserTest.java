@@ -45,7 +45,9 @@ public class ParserTest {
     @Test
     public void canGetContentOfTag() {
         XMLParser parser = new XMLParser();
-        assertThat(parser.getContentOfTag("option", "<option>blah-blah-blah</option>"),equalTo("blah-blah-blah"));
+        assertThat(parser.getContentOfTag("option", "<option>blah-blah-blah</option>"), equalTo("blah-blah-blah"));
+        assertThat(parser.getContentOfTag("option", "<option name=\"http-port\">blah-blah-blah</option>"), equalTo("blah-blah-blah"));
+        assertThat(parser.getContentOfTag("option", "<option name=\"http-port\"><option-description>blah-blah-blah</option-description></option>"), equalTo("<option-description>blah-blah-blah</option-description>"));
     }
 
     @Test
@@ -55,7 +57,7 @@ public class ParserTest {
         assertThat(parser.getDescriptionContentFromFullTag("<option><option-description>blah</option-description></option>", translator), equalTo("blah"));
         assertThat(parser.getDescriptionContentFromFullTag("<option><option-description>blah</option-description></option>", translator), equalTo("blah"));
         assertThat(parser.getDescriptionContentFromFullTag("<option><![CDATA[blah blah]]></option>", translator), equalTo(null));
-        assertThat(parser.getDescriptionContentFromFullTag("", translator), equalTo(null));
+        assertThat(parser.getDescriptionContentFromFullTag("<option name=\"http-port\"><option-description><![CDATA[blah-blah-blah]]></option-description></option>", translator), equalTo("blah-blah-blah"));
     }
 }
 

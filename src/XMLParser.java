@@ -42,8 +42,16 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
     } //DONE
 
     public String getContentOfTag(String tagClass, String input) {
-        return input.substring(2 + tagClass.length(), input.length() - 3 - tagClass.length());
-    }
+        String openingTag = getOpeningTagFromTotalTag(input);
+        if (openingTag.length() == tagClass.length() + 2) {
+            return input.substring(2 + tagClass.length(), input.length() - 3 - tagClass.length());
+        } else {
+            String attributes = input.substring(1 + tagClass.length(), openingTag.length() - 1);
+            String newOpeningTag = openingTag.replace(attributes, "");
+            String newInput = input.replace(openingTag, newOpeningTag);
+            return getContentOfTag(tagClass, newInput);
+        }
+    } //DONE
 
     private String[] StringToArrayOfStringsRepresentingEachCharacter(String string) {
         char[] charArrayOfString = string.toCharArray();
@@ -103,7 +111,7 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
         for (int i = 0; i < stringArray.length; i++) {
             String string = stringArray[i];
             if (string.equals(">")) {
-                positionOfFirstClosingAngleBracket = i;
+                positionOfFirstClosingAngleBracket = i + 1;
                 break;
             }
         }
