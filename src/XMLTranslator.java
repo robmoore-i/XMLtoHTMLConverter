@@ -23,7 +23,6 @@ public class XMLTranslator {
         XMLTag tag = parser.getXMLTagFromOpeningTag(openingTagFromTotalTag);
         String title = tag.attributes[0].value;
         String description = translateDescription(parser.getDescriptionContentFromFullTag(totalOptionTag, this));
-        System.out.println((parser.getDescriptionContentFromFullTag(totalOptionTag, this)));
         String table = buildTable(tag);
         return "<h3><div>" + title + "</div></h3>" + "<p><div>" + description + "</div></p>" + table;
     }
@@ -33,6 +32,6 @@ public class XMLTranslator {
         for (int i = 1; i < tag.attributes.length - 1; i++) {
             tableContents += "<tr><td>" + tag.attributes[i].name + "</td><td>" + tag.attributes[i].value + "</td></tr>";
         }
-        return "<table>" + tableContents + "</table>";
+        return "<table border=\"1\">" + tableContents + "</table>";
     }
 }

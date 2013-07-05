@@ -25,7 +25,7 @@ public class TranslatorTest {
                 (translator.translateAloneOptionTag(
                         "<option name=\"datasrc-port\" type=\"Integer\" default=\"0\" java=\"true\"><option-description><![CDATA[Network port to listen for connections from DataSource peers. The default of 0 means that no connections can be made to this DataSource.]]></option-description></option>", parser),
                         equalTo(
-                                "<h3><div>datasrc-port</div></h3><p><div>Network port to listen for connections from DataSource peers. The default of 0 means that no connections can be made to this DataSource.</div></p><table><tr><td>type</td><td>Integer</td></tr><tr><td>default</td><td>0</td></tr><tr><td>java</td><td>true</td></tr></table>"
+                                "<h3><div>datasrc-port</div></h3><p><div>Network port to listen for connections from DataSource peers. The default of 0 means that no connections can be made to this DataSource.</div></p><table border=\"1\"><tr><td>type</td><td>Integer</td></tr><tr><td>default</td><td>0</td></tr><tr><td>java</td><td>true</td></tr></table>"
                         )
                 );
     }

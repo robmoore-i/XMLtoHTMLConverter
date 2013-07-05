@@ -1,5 +1,5 @@
 Option tag                                              : “Name” attribute as the title of a table and the other attributes are values in the table
-AcceptableValues tag (only found inside an option tag)  : Drop down list next to relevant option table
+AcceptableValues tag (only found inside an option tag)  : Unordered list. Enum descriptions underneath each one as a sublist with 1 element
 Enum tag (only found inside acceptableValues tag)       : As an option for the drop down list
 Group tag                                               : “Name” being a h2
 Page tag                                                : New page with the “name” attribute being a centred h1

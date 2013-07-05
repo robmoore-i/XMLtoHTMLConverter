@@ -7,7 +7,7 @@ public class FormatterTest {
 
     @Test
     public void canSetupPageCorrectly() {
-        XMLDataFormatter formatter = new XMLDataFormatter();
+        HTMLFormatter formatter = new HTMLFormatter();
         assertThat(formatter.finishPage("<p>I'm a paragraph</p>"), equalTo("<!DOCTYPE html><html><body><p>I'm a paragraph</p></body></html>"));
     }
 }

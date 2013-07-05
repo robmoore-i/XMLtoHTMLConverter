@@ -8,10 +8,4 @@ public class StringTool {
         }
         return s1;
     }
-
-//    public static void printArray(Object[] array) {
-//        for (Object o : array) {
-//            System.out.print(o);
-//        }
-//    }
 }
