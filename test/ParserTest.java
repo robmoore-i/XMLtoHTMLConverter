@@ -53,11 +53,10 @@ public class ParserTest {
     @Test
     public void canGetDescriptionFromFullTag() {
         XMLParser parser = new XMLParser();
-        XMLTranslator translator = new XMLTranslator();
-        assertThat(parser.getDescriptionContentFromFullTag("<option><option-description>blah</option-description></option>", translator), equalTo("blah"));
-        assertThat(parser.getDescriptionContentFromFullTag("<option><option-description>blah</option-description></option>", translator), equalTo("blah"));
-        assertThat(parser.getDescriptionContentFromFullTag("<option><![CDATA[blah blah]]></option>", translator), equalTo(null));
-        assertThat(parser.getDescriptionContentFromFullTag("<option name=\"http-port\"><option-description><![CDATA[blah-blah-blah]]></option-description></option>", translator), equalTo("blah-blah-blah"));
+        assertThat(parser.getDescriptionContentFromFullTag("<option><option-description>blah</option-description></option>"), equalTo("blah"));
+        assertThat(parser.getDescriptionContentFromFullTag("<option><option-description>blah</option-description></option>"), equalTo("blah"));
+        assertThat(parser.getDescriptionContentFromFullTag("<option><![CDATA[blah blah]]></option>"), equalTo(null));
+        assertThat(parser.getDescriptionContentFromFullTag("<option name=\"http-port\"><option-description><![CDATA[blah-blah-blah]]></option-description></option>"), equalTo("blah-blah-blah"));
     }
 }
 

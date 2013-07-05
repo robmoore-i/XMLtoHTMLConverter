@@ -11,6 +11,7 @@ import java.util.Properties;
 public class VelocityXMLFormatter {
     private VelocityContext context = new VelocityContext();
     private StringWriter output = new StringWriter();
+    private XMLParser parser = new XMLParser();
     private final static String templatePath = "/templates/";
 
     public VelocityXMLFormatter() {
@@ -33,14 +34,30 @@ public class VelocityXMLFormatter {
         return template;
     }
 
-    private void formatOption_OptionDescription(XMLAttribute[] attributes, String description) {
-
+    public String formatOption_OptionDescription(String input) {
+        XMLTag tag = parser.getXMLTagFromOpeningTag(parser.getOpeningTagFromTotalTag(input));
+        String description = parser.getDescriptionContentFromFullTag(input);
+        context.put(tag.attributes[0].name, tag.attributes[0].value);
+        context.put(tag.attributes[1].name, tag.attributes[1].value);
+        try {
+            context.put(tag.attributes[2].name, tag.attributes[2].value);
+        } catch (Exception ignored) {
+        }
+        try {
+            context.put(tag.attributes[3].name, tag.attributes[3].value);
+        } catch (Exception ignored) {
+        }
+        context.put("description", description);
+        write(getTemplate("Option_OptionDescription"));
+        return String.valueOf(output);
     }
 
-    private void formatOption_AcceptableValues_OptionDescription(XMLAttribute[] attributes, XMLTag[] acceptableValues, String description) {
+    public String formatOption_AcceptableValues_OptionDescription(XMLAttribute[] attributes, XMLTag[] acceptableValues, String description) {
+        return String.valueOf(output);
     }
 
-    private void page_TopDescription(String name, String description) {
+    public String formatPage_TopDescription(String name, String description) {
+        return String.valueOf(output);
     }
 
     private void write(Template template) {

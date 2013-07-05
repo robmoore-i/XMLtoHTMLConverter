@@ -1,0 +1,7 @@
+<table class="Option_OptionDescription">
+<tr><td>name</td><td>$name</td></tr>
+<tr><td>type</td><td>$type</td></tr>
+<tr><td>deprecated</td><td>$deprecated</td></tr>
+<tr><td>default</td><td>$default</td></tr>
+<tr><td>java</td><td>$java</td></tr>
+</table>
