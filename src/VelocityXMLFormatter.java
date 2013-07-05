@@ -50,13 +50,18 @@ public class VelocityXMLFormatter {
         context.put("description", description);
         write(getTemplate("Option_OptionDescription"));
         return String.valueOf(output);
-    }
+    } //DONE
 
-    public String formatOption_AcceptableValues_OptionDescription(XMLAttribute[] attributes, XMLTag[] acceptableValues, String description) {
+    public String formatOption_AcceptableValues_OptionDescription(XMLAttribute[] attributes, XMLTag[] acceptableValues, String description) { //need to decide how to format this.
         return String.valueOf(output);
     }
 
-    public String formatPage_TopDescription(String name, String description) {
+    public String formatPage_TopDescription(String input) {
+        XMLTag tag = parser.getXMLTagFromOpeningTag(parser.getOpeningTagFromTotalTag(input));
+        String description = parser.getDescriptionContentFromFullTag(input);
+        context.put(tag.attributes[0].name, tag.attributes[0].value);
+        context.put("description", description);
+        write(getTemplate("Page_TopDescription"));
         return String.valueOf(output);
     }
 
