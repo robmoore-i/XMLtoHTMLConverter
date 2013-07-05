@@ -22,7 +22,7 @@ public class XMLParser { //clean code n shit: methods do 1 thing, name things we
     private String[] changeInputToNameValueFormat(String string) {
         String splitByQuotes = StringUtils.rejoinStringArray(string.split("\""), 0);
         return splitByQuotes.split(" ");
-    }
+    } //EDIT
 
     private String removeAngleBrackets(String string) {
         String removeAngleBrackets = string;
