@@ -18,6 +18,8 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="commons-collections-3.2.1" level="project" />
+    <orderEntry type="library" name="commons-lang-2.6" level="project" />
+    <orderEntry type="library" name="velocity-1.7" level="project" />
   </component>
 </module>
 
