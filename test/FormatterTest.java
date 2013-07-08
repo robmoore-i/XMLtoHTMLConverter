@@ -12,7 +12,7 @@ public class FormatterTest {
     }
 
     @Test
-    public void canFormatPage_TopDescriptionCorrectly() {
+    public void canFormatPage_TopDescriptionCorrectly() { //wip
         VelocityXMLFormatter formatter = new VelocityXMLFormatter();
         String pageTag =
                 "<page name=\"Name Mapping\"><top-description><![CDATA[A DataSource application can be configured to map its internal namespace to a different external namespace.]]>" +
