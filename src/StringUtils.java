@@ -35,4 +35,13 @@ public class StringUtils {
             System.out.println(string);
         }
     }
+
+    public int positionOfNextAFromBInC(String A, int B, String C) {
+        for (int i = B; i < C.length(); i++) {
+            if (String.valueOf(C.charAt(i)).equals(A)) {
+                return i;
+            }
+        }
+        return 0;
+    }
 }
