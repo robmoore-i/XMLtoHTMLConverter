@@ -1,4 +1,4 @@
-public class StringUtils {
+public abstract class StringUtils {
 //A one class library of useful functions for this program.
 
     public static String rejoinStringArray(String[] array, int fromWhichEntry) {
@@ -36,7 +36,7 @@ public class StringUtils {
         }
     }
 
-    public int positionOfNextAFromBInC(String A, int B, String C) {
+    public static int positionOfNextAFromBInC(String A, int B, String C) {
         for (int i = B; i < C.length(); i++) {
             if (String.valueOf(C.charAt(i)).equals(A)) {
                 return i;
