@@ -166,7 +166,7 @@ public class ConfigDoc {
             return;
         }
 
-        BufferedReader bufferedReader = null;
+        BufferedReader bufferedReader;
         String currentLine;
         String input = "";
         bufferedReader = new BufferedReader(new FileReader(args[0]));
