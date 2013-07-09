@@ -73,13 +73,22 @@ public class ConfigDoc {
         bufferedWriter.write(contents);
         bufferedWriter.close();
     }
+
+    private String cleanDescription(String descriptionText) {
+        String editedDescription = descriptionText;
+        editedDescription = editedDescription.replace("<![CDATA[", "");
+        editedDescription = editedDescription.replace("]]>", "");
+        editedDescription = editedDescription.replace("\\verbatim", "");
+        editedDescription = editedDescription.replace("\\endverbatim", "");
+        return editedDescription;
+    }
     //</UTILS>
 
     //<PAGE>
     private String templatePage(Node node, VelocityContext context) throws Exception {
         StringBuilder stringBuilder = new StringBuilder("");
         stringBuilder.append("<h2>").append(node.getAttributes().getNamedItem("name").getNodeValue()).append("</h2>");
-        stringBuilder.append("<div>").append(Utils.cleanDescription(node.getFirstChild().getTextContent())).append("</div>");
+        stringBuilder.append("<div>").append(cleanDescription(node.getFirstChild().getTextContent())).append("</div>");
         for (int i = 1; i < node.getChildNodes().getLength(); i++) { //start at 1 to miss out "top-description" which is done above
             stringBuilder.append(parseNode(node.getChildNodes().item(i), context)).append("<div></div>");
         }
@@ -91,7 +100,7 @@ public class ConfigDoc {
     private String templateGroup(Node node, VelocityContext context) throws Exception {
         StringBuilder stringBuilder = new StringBuilder("");
         stringBuilder.append("<div>").append(node.getAttributes().getNamedItem("name").getNodeValue()).append("</div>");
-        stringBuilder.append(Utils.cleanDescription(node.getFirstChild().getTextContent())).append("");
+        stringBuilder.append(cleanDescription(node.getFirstChild().getTextContent())).append("");
         stringBuilder.append(parseNode(node, context));
         stringBuilder.append("<div>end of group: ").append(node.getAttributes().getNamedItem("name").getNodeValue()).append("</div>");
         return stringBuilder.toString();
@@ -117,13 +126,13 @@ public class ConfigDoc {
     }
 
     private String templateContentsOfOptionWithoutAcceptableValues(Node node, VelocityContext context) {
-        context.put("description", Utils.cleanDescription(node.getFirstChild().getTextContent()));
+        context.put("description", cleanDescription(node.getFirstChild().getTextContent()));
         return ""; //if this is called then there are no acceptable values so an empty string should be returned by the function "templateContentsOfOption"
     }
 
     private String templateContentsOfOptionWithAcceptableValues(Node node, VelocityContext context) {
         String templatedAcceptableValues = templateAcceptableValues(node.getFirstChild(), context);
-        context.put("description", Utils.cleanDescription(node.getLastChild().getTextContent()));
+        context.put("description", cleanDescription(node.getLastChild().getTextContent()));
         return templatedAcceptableValues;
     }
 
@@ -142,7 +151,7 @@ public class ConfigDoc {
             Node currentChild = node.getChildNodes().item(i);
             context.put("name" + String.valueOf(i), currentChild.getAttributes().getNamedItem("name").getTextContent());
             context.put("value" + String.valueOf(i), currentChild.getAttributes().getNamedItem("value").getTextContent());
-            context.put("description" + String.valueOf(i), Utils.cleanDescription(currentChild.getFirstChild().getTextContent()));
+            context.put("description" + String.valueOf(i), cleanDescription(currentChild.getFirstChild().getTextContent()));
         }
         StringWriter stringWriter = writeFromTemplate(context, "acceptableValues.vm");
         return String.valueOf(stringWriter);
@@ -173,7 +182,6 @@ public class ConfigDoc {
         while ((currentLine = bufferedReader.readLine()) != null) {
             input = input.concat(currentLine);
         }
-        input = Utils.cleanDescription(input);
         ConfigDoc configDoc = new ConfigDoc(new ByteArrayInputStream(input.getBytes()));
         String output = configDoc.parse();
         System.out.println(output);
