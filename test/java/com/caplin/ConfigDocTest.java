@@ -1,3 +1,6 @@
+package java.com.caplin;
+
+import main.java.com.caplin.ConfigDoc;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
@@ -45,6 +48,20 @@ public class ConfigDocTest {
                         "</DSDK>";
         ConfigDoc configDoc = new ConfigDoc(new ByteArrayInputStream(input.getBytes()));
         assertThat(configDoc.parse().replace("\r\n", ""), equalTo(
-                "hi<table border=\"1\"><tr><td>name</td><td>a</td></tr><tr><td>type</td><td>b</td></tr><tr><td>default</td><td>c</td></tr><tr><td>deprecated</td><td>d</td></tr><tr><td>java</td><td>e</td></tr></table><table border=\"1\"><tr><td>name</td><td>value</td><td>description</td></tr><tr><td>name1</td><td>value1</td><td>description1</td></tr><tr><td>name2</td><td>value2</td><td>description2</td></tr><tr><td>name3</td><td>value3</td><td>description3</td></tr><tr><td>name4</td><td>value4</td><td>description4</td></tr></table>"));
+                "<p>hi</p>" +
+                        "<table border=\"1\">" +
+                        "<tr><td>name</td><td>a</td></tr>" +
+                        "<tr><td>type</td><td>b</td></tr>" +
+                        "<tr><td>default</td><td>c</td></tr>" +
+                        "<tr><td>deprecated</td><td>d</td></tr>" +
+                        "<tr><td>java</td><td>e</td></tr>" +
+                        "</table>" +
+                        "<table border=\"1\">" +
+                        "<tr><td>name</td><td>value</td><td>description</td></tr>" +
+                        "<tr><td>name1</td><td>value1</td><td>description1</td></tr>" +
+                        "<tr><td>name2</td><td>value2</td><td>description2</td></tr>" +
+                        "<tr><td>name3</td><td>value3</td><td>description3</td></tr>" +
+                        "<tr><td>name4</td><td>value4</td><td>description4</td></tr>" +
+                        "</table>"));
     }
 }
