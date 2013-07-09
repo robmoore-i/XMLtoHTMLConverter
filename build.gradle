@@ -1,0 +1,14 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+group = 'com.caplin'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile(group: 'junit', name: 'junit', version: '4.9')
+    compile('velocity:velocity:1.5')
+
+}
