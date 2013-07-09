@@ -1,7 +1,0 @@
-<!DOCTYPE>
-<html>
-<body>
-<h1 class="Page_TopDescription">$name</h1>
-<p class="Page_TopDescription">$description</p>
-</body>
-</html>
