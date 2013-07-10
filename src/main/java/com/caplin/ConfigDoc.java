@@ -175,7 +175,7 @@ public class ConfigDoc {
             return;
         }
 
-        BufferedReader bufferedReader = null;
+        BufferedReader bufferedReader;
         String currentLine;
         String input = "";
         bufferedReader = new BufferedReader(new FileReader(args[0]));
@@ -183,6 +183,6 @@ public class ConfigDoc {
             input = input.concat(currentLine);
         }
         ConfigDoc configDoc = new ConfigDoc(new ByteArrayInputStream(input.getBytes()));
-        String output = configDoc.parse();
+        configDoc.parse();
     }
 }
