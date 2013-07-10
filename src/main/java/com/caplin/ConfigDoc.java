@@ -22,17 +22,16 @@ public class ConfigDoc {
     }
 
     public String parse() throws Exception {
-        VelocityContext context = new VelocityContext();
         DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         Document doc = dBuilder.parse(input);
         Node rootElement = doc.getDocumentElement();
         if (!"DSDK".equals(rootElement.getNodeName())) {
             throw new Exception("Incorrect root node. Should be DSDK");
         }
-        return parseNode(rootElement, context);
+        return parseNode(rootElement);
     }
 
-    private String parseNode(Node currentNode, VelocityContext context) throws Exception {
+    private String parseNode(Node currentNode) throws Exception {
         StringBuilder output = new StringBuilder("");
         NodeList nodeList = currentNode.getChildNodes();
         int pageNumber = 1;
@@ -40,18 +39,18 @@ public class ConfigDoc {
             Node currentChild = nodeList.item(count);
             String nodeName = currentChild.getNodeName().toLowerCase();
             if (nodeName.equals("page")) {
-                String templatedPage = templatePage(currentChild, context);
+                String templatedPage = templatePage(currentChild);
                 makeNewFile(currentChild.getAttributes().getNamedItem("name").getNodeValue() + " pageNumber-" + pageNumber, templatedPage);
                 output.append(templatedPage);
                 pageNumber++;
             } else if (nodeName.equals("option")) {
-                String templatedOption = templateOption(currentChild, context);
+                String templatedOption = templateOption(currentChild);
                 output.append(templatedOption);
             } else if (nodeName.equals("options")) {
-                String templatedOptions = templateOptions(currentChild, context);
+                String templatedOptions = templateOptions(currentChild);
                 output.append(templatedOptions);
             } else if (nodeName.equals("group")) {
-                String templatedGroup = templateGroup(currentChild, context);
+                String templatedGroup = templateGroup(currentChild);
                 output.append(templatedGroup);
             }
         }
@@ -85,30 +84,42 @@ public class ConfigDoc {
     //</UTILS>
 
     //<PAGE>
-    private String templatePage(Node node, VelocityContext context) throws Exception {
+    private String templatePage(Node node) throws Exception {
         StringBuilder stringBuilder = new StringBuilder("");
         stringBuilder.append("<h2>").append(node.getAttributes().getNamedItem("name").getNodeValue()).append("</h2>");
         stringBuilder.append("<div>").append(cleanDescription(node.getFirstChild().getTextContent())).append("</div>");
         for (int i = 1; i < node.getChildNodes().getLength(); i++) { //start at 1 to miss out "top-description" which is done above
-            stringBuilder.append(parseNode(node.getChildNodes().item(i), context)).append("<div></div>");
+            stringBuilder.append(parseNode(node.getChildNodes().item(i))).append("<div></div>");
         }
         return stringBuilder.toString();
     } //PAGE
     //</PAGE>
 
     //<GROUP>
-    private String templateGroup(Node node, VelocityContext context) throws Exception {
+    private String templateGroup(Node node) throws Exception {
         StringBuilder stringBuilder = new StringBuilder("");
         stringBuilder.append("<h3>").append("Group: ").append(node.getAttributes().getNamedItem("name").getNodeValue()).append("</h3>");
         stringBuilder.append(cleanDescription(node.getFirstChild().getTextContent())).append("");
-        stringBuilder.append(parseNode(node, context));
+        stringBuilder.append(parseNode(node));
         stringBuilder.append("<div>End of group: ").append(node.getAttributes().getNamedItem("name").getNodeValue()).append("</div>");
         return stringBuilder.toString();
     } //DONE
     //</GROUP>
 
+    //<OPTIONS>
+    private String templateOptions(Node node) throws Exception {
+        StringBuilder output = new StringBuilder("");
+        for (int i = 0; i < node.getChildNodes().getLength(); i++) {
+            Node currentChild = node.getChildNodes().item(i);
+            output.append(templateOption(currentChild)).append("<div></div>");
+        }
+        return output.toString();
+    } //DONE
+    //</OPTIONS>
+
     //<OPTION>
-    private String templateOption(Node node, VelocityContext context) throws Exception {
+    private String templateOption(Node node) throws Exception {
+        VelocityContext context = new VelocityContext();
         assignOptionAttributesToVelocityContext(node, context);
         String templatedAcceptableValues = templateContentsOfOption(node, context);
         StringWriter stringWriter = writeFromTemplate(context, "option.vm");
@@ -157,17 +168,6 @@ public class ConfigDoc {
         return String.valueOf(stringWriter);
     }
     //</OPTION>
-
-    //<OPTIONS>
-    private String templateOptions(Node node, VelocityContext context) throws Exception {
-        StringBuilder output = new StringBuilder("");
-        for (int i = 0; i < node.getChildNodes().getLength(); i++) {
-            Node currentChild = node.getChildNodes().item(i);
-            output.append(templateOption(currentChild, context)).append("<div></div>");
-        }
-        return output.toString();
-    } //DONE
-    //</OPTIONS>
 
     public static void main(String[] args) throws Exception {
         if (args.length != 1) {
