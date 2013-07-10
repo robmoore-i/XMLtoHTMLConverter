@@ -99,10 +99,10 @@ public class ConfigDoc {
     //<GROUP>
     private String templateGroup(Node node, VelocityContext context) throws Exception {
         StringBuilder stringBuilder = new StringBuilder("");
-        stringBuilder.append("<div>").append(node.getAttributes().getNamedItem("name").getNodeValue()).append("</div>");
+        stringBuilder.append("<h3>").append("Group: ").append(node.getAttributes().getNamedItem("name").getNodeValue()).append("</h3>");
         stringBuilder.append(cleanDescription(node.getFirstChild().getTextContent())).append("");
         stringBuilder.append(parseNode(node, context));
-        stringBuilder.append("<div>end of group: ").append(node.getAttributes().getNamedItem("name").getNodeValue()).append("</div>");
+        stringBuilder.append("<div>End of group: ").append(node.getAttributes().getNamedItem("name").getNodeValue()).append("</div>");
         return stringBuilder.toString();
     } //DONE
     //</GROUP>
@@ -182,7 +182,6 @@ public class ConfigDoc {
         while ((currentLine = bufferedReader.readLine()) != null) {
             input = input.concat(currentLine);
         }
-        System.out.println(input);
         ConfigDoc configDoc = new ConfigDoc(new ByteArrayInputStream(input.getBytes()));
         String output = configDoc.parse();
     }
