@@ -1,4 +1,4 @@
-package main.java.com.caplin;
+package com.caplin;
 
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;

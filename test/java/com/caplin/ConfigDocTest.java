@@ -1,6 +1,6 @@
 package java.com.caplin;
 
-import main.java.com.caplin.ConfigDoc;
+import com.caplin.ConfigDoc;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
