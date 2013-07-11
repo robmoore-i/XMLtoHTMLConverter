@@ -11,14 +11,37 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="junit-4.9" level="project" />
-    <orderEntry type="library" exported="" name="oro-2.0.8" level="project" />
-    <orderEntry type="library" name="libs" level="project" />
-    <orderEntry type="library" name="libs" level="project" />
-    <orderEntry type="module-library" scope="TEST">
+    <orderEntry type="module-library" exported="" scope="TEST">
       <library>
         <CLASSES>
           <root url="jar://$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/lib/commons-collections-3.2.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/lib/commons-lang-2.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/lib/velocity-1.7.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

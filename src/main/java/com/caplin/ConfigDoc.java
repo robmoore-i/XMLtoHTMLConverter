@@ -14,6 +14,13 @@ import java.util.ArrayList;
 
 public class ConfigDoc {
     private InputStream input;
+    public String templateDir = "/src/main/resources/";
+    public String outputDir = "C:/Users/robertm/Desktop/";
+    public String acceptableValuesTemplate = "acceptableValues.vm";
+    public String optionTemplate = "option.vm";
+    public String pageTemplate = "page.vm";
+    public String groupTemplate = "group.vm";
+    public String navigationTemplate = "navigation.vm";
 
     public ConfigDoc(InputStream input) {
         this.input = input;
@@ -61,14 +68,14 @@ public class ConfigDoc {
 
     //<UTILS>
     public String writeFromTemplate(VelocityContext context, String templateName) {
-        Template template = Velocity.getTemplate("\\src\\main\\resources\\" + templateName);
+        Template template = Velocity.getTemplate(templateDir + templateName);
         StringWriter stringWriter = new StringWriter();
         template.merge(context, stringWriter);
         return stringWriter.toString();
     } //TESTED
 
     private void makeNewFile(String pageName, String contents) throws IOException {
-        File writeFile = new File("C:/Users/robertm/Desktop/" + pageName + ".html");
+        File writeFile = new File(outputDir + pageName + ".html");
         FileWriter fileWriter = new FileWriter(writeFile.getAbsoluteFile());
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         bufferedWriter.write(contents);
@@ -98,7 +105,7 @@ public class ConfigDoc {
     public String templateNavigation(String[] pageNames) throws Exception {
         VelocityContext context = new VelocityContext();
         context.put("pageNames", pageNames);
-        return writeFromTemplate(context, "navigation.vm");
+        return writeFromTemplate(context, navigationTemplate);
     } //TESTED
     //</NAVIGATION>
 
@@ -112,7 +119,7 @@ public class ConfigDoc {
             stringBuilder.append(parseNode(node.getChildNodes().item(i)));
         }
         context.put("body", stringBuilder.toString());
-        return writeFromTemplate(context, "page.vm");
+        return writeFromTemplate(context, pageTemplate);
     } //TESTED
     //</PAGE>
 
@@ -122,7 +129,7 @@ public class ConfigDoc {
         context.put("title", node.getAttributes().getNamedItem("name").getNodeValue());
         context.put("description", cleanDescription(node.getFirstChild().getTextContent()));
         context.put("body", parseNode(node));
-        return writeFromTemplate(context, "group.vm");
+        return writeFromTemplate(context, groupTemplate);
     } //TESTED
     //</GROUP>
 
@@ -142,7 +149,7 @@ public class ConfigDoc {
         VelocityContext context = new VelocityContext();
         assignOptionAttributesToVelocityContext(node, context);
         String templatedAcceptableValues = templateContentsOfOption(node, context);
-        String templatedOption = writeFromTemplate(context, "option.vm");
+        String templatedOption = writeFromTemplate(context, optionTemplate);
         return (templatedOption + templatedAcceptableValues + "<br/>");
     } //TESTED
 
@@ -202,7 +209,7 @@ public class ConfigDoc {
         context.put("values", values);
         context.put("descriptions", descriptions);
         context.put("length", names.size() - 1);
-        return writeFromTemplate(context, "acceptableValues.vm");
+        return writeFromTemplate(context, acceptableValuesTemplate);
     } //TESTED
     //</ACCEPTABLE-VALUES>
     //</OPTION>
