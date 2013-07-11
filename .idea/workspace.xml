@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/acceptableValues.vm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/navigation.vm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/resources/option.vm" />
-      <change type="DELETED" beforePath="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src\main\java\com\caplin\Utils.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src\main\resources\acceptableValues.vm" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src\main\resources\group.vm" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src\main\resources\navigation.vm" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src\main\resources\option.vm" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src\main\resources\page.vm" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\test\resources\datasource.xml" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src\main\resources\group.vm" afterPath="$PROJECT_DIR$/src/main/java/resources/group.vm" />
-      <change type="MOVED" beforePath="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src\main\resources\page.vm" afterPath="$PROJECT_DIR$/src/main/java/resources/page.vm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/caplin/ConfigDoc.java" afterPath="$PROJECT_DIR$/src/main/java/com/caplin/ConfigDoc.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/java/com/caplin/ConfigDocTest.java" afterPath="$PROJECT_DIR$/test/java/com/caplin/ConfigDocTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/XMLtoHTMLConverter_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" />
+      <change type="DELETED" beforePath="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\.idea\libraries\commons_collections_3_2_1.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="XMLtoJavaDocConverter.iws" />
@@ -28,7 +17,7 @@
     <file path="/EvalTool.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1372845812778" ignored="false" />
     <file path="/StringTool.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373028334081" ignored="false" />
     <file path="/XMLData.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1372858288373" ignored="false" />
-    <file path="/Dummy.txt" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373538204285" ignored="false" />
+    <file path="/Dummy.txt" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373546954683" ignored="false" />
     <file path="/TranslatorTest.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1372952487997" ignored="false" />
     <file path="/Translator.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1372926770699" ignored="false" />
     <file path="/README" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373388418605" ignored="false" />
@@ -54,7 +43,7 @@
     <file path="/Utils.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373285677237" ignored="false" />
     <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/test/java/com/caplin/ConfigDocTest.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373366124127" ignored="false" />
     <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/main/java/com/caplin/VelocityDemo.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373297707393" ignored="false" />
-    <file path="/ConfigDocTest.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373380897380" ignored="false" />
+    <file path="/ConfigDocTest.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373546901276" ignored="false" />
     <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/main/resources/mytemplate.vm" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373300148290" ignored="false" />
     <file path="/mytemplate.vm" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373296019627" ignored="false" />
     <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/main/java/com/caplin/FileWrite.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373296755284" ignored="false" />
@@ -72,7 +61,7 @@
     <file path="/acceptableValues.vm" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373362961993" ignored="false" />
     <file path="/asjofb.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373383323622" ignored="false" />
     <file path="/DoStuffClass.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373383631681" ignored="false" />
-    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/platform-config-doc.iws" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373388428851" ignored="false" />
+    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/platform-config-doc.iws" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373539783200" ignored="false" />
     <file path="/todo" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373444249185" ignored="false" />
     <file path="/group.vm" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373444575262" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -135,47 +124,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ConfigDoc.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/caplin/ConfigDoc.java">
+      <file leaf-file-name="ConfigDocTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/caplin/ConfigDocTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="32" selection-start="799" selection-end="799" vertical-scroll-proportion="0.0">
+            <state line="34" column="19" selection-start="1112" selection-end="1112" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="method#ConfigDoc#0;class#ConfigDoc#0" expanded="false" />
-                <element signature="method#parseNode#0;class#ConfigDoc#0" expanded="false" />
-                <element signature="method#writeFromTemplate#0;class#ConfigDoc#0" expanded="false" />
-                <element signature="method#makeNewFile#0;class#ConfigDoc#0" expanded="false" />
-                <element signature="method#cleanDescription#0;class#ConfigDoc#0" expanded="false" />
-                <element signature="method#templateNavigation#0;class#ConfigDoc#0" expanded="false" />
-                <element signature="method#templatePage#0;class#ConfigDoc#0" expanded="false" />
-                <element signature="method#templateGroup#0;class#ConfigDoc#0" expanded="false" />
-                <element signature="method#templateOptions#0;class#ConfigDoc#0" expanded="false" />
-                <element signature="method#templateOption#0;class#ConfigDoc#0" expanded="false" />
-                <element signature="method#templateContentsOfOption#0;class#ConfigDoc#0" expanded="false" />
-                <element signature="method#templateContentsOfOptionWithoutAcceptableValues#0;class#ConfigDoc#0" expanded="false" />
-                <element signature="method#templateContentsOfOptionWithShortName#0;class#ConfigDoc#0" expanded="false" />
-                <element signature="method#assignOptionAttributesToVelocityContext#0;class#ConfigDoc#0" expanded="false" />
-                <element signature="method#templateContentsOfOptionWithAcceptableValues#0;class#ConfigDoc#0" expanded="false" />
-                <element signature="method#templateAcceptableValues#0;class#ConfigDoc#0" expanded="false" />
-                <element signature="method#main#0;class#ConfigDoc#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConfigDocTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/java/com/caplin/ConfigDocTest.java">
+      <file leaf-file-name="XMLtoHTMLConverter_jar.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/artifacts/XMLtoHTMLConverter_jar.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="20" selection-start="799" selection-end="799" vertical-scroll-proportion="0.0">
+            <state line="13" column="12" selection-start="890" selection-end="890" vertical-scroll-proportion="0.24205914">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page.vm" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/resources/page.vm">
+      <file leaf-file-name="ConfigDoc.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/caplin/ConfigDoc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="7" selection-start="121" selection-end="121" vertical-scroll-proportion="0.16721311">
-              <folding />
+            <state line="14" column="13" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -198,8 +173,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Actual/ConfigDoc.java" />
-        <option value="$PROJECT_DIR$/test/ConfigDoc.java" />
         <option value="$PROJECT_DIR$/test/ConfigDocTest.java" />
         <option value="$PROJECT_DIR$/src/asjofb.java" />
         <option value="$PROJECT_DIR$/src/DoStuffClass.java" />
@@ -214,6 +187,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/page.vm" />
         <option value="$PROJECT_DIR$/test/java/com/caplin/ConfigDocTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/caplin/ConfigDoc.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/test/java/com/caplin/ConfigDocTest.java" />
       </list>
     </option>
   </component>
@@ -274,6 +249,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -303,6 +280,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="XMLtoHTMLConverter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -336,11 +317,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="XMLtoHTMLConverter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="XMLtoHTMLConverter" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -383,23 +382,39 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="XMLtoHTMLConverter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="XMLtoHTMLConverter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_directory_selection" value="$PROJECT_DIR$/test" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.lastSelected" value="editor" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/lib/velocity-1.7.jar!/" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -416,25 +431,25 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter" />
       <recent name="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src\main\java" />
       <recent name="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src" />
-      <recent name="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\test\java" />
       <recent name="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src\main" />
+      <recent name="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\test\java" />
       <recent name="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src\java\com\caplin" />
       <recent name="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src" />
       <recent name="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\Formatting documentation" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.ConfigDoc">
+  <component name="RunManager" selected="Groovy.build">
     <configuration default="false" name="ConfigDoc" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.caplin.ConfigDoc" />
       <option name="VM_PARAMETERS" value="" />
@@ -450,6 +465,19 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
+    </configuration>
+    <configuration default="false" name="build" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
+      <module name="XMLtoHTMLConverter" />
+      <setting name="path" value="file://$PROJECT_DIR$/build.gradle" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="Make" enabled="false" />
+      </method>
     </configuration>
     <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
       <module name="" />
@@ -548,12 +576,14 @@
       <patterns />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.ConfigDoc" />
+      <item index="1" class="java.lang.String" itemvalue="Groovy.build" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.ConfigDoc" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Groovy.build" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ConfigDoc" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -769,7 +799,19 @@
       <created>1373532700848</created>
       <updated>1373532700848</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="working version. I believe it to be finished.">
+      <created>1373538317031</created>
+      <updated>1373538317031</updated>
+    </task>
+    <task id="LOCAL-00048" summary="wtf perforce.">
+      <created>1373539803474</created>
+      <updated>1373539803474</updated>
+    </task>
+    <task id="LOCAL-00049" summary="p4 fixed. now to try and make a jar. this WILL fail. so I WILL see this commit message again. hi me.">
+      <created>1373546957409</created>
+      <updated>1373546957409</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -784,6 +826,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32837406" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -793,7 +836,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32837406" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995749" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -840,7 +882,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating from the frontline version on the computer at Caplin." />
+    <option name="LAST_COMMIT_MESSAGE" value="p4 fixed. now to try and make a jar. this WILL fail. so I WILL see this commit message again. hi me." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -854,9 +896,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="Rearrangement" />
-    <MESSAGE value="Adding all the velocity stuff and making some functions on the velocity libraries and all kinds of other shizzle." />
-    <MESSAGE value="Velocity stuff is fully integrated. Moar tests will come soon. Added a stylesheet to the templates folder." />
     <MESSAGE value="Made the test for the Page_TopDescription format pass." />
     <MESSAGE value="Added some styling for the Page_TopDescription format" />
     <MESSAGE value="Committing a working version before making an edit to &quot;changeInputToNameVaueFormat(string)&quot;" />
@@ -879,6 +918,9 @@
     <MESSAGE value="Removing pointless things that caused warnings." />
     <MESSAGE value="restructure" />
     <MESSAGE value="Updating from the frontline version on the computer at Caplin." />
+    <MESSAGE value="working version. I believe it to be finished." />
+    <MESSAGE value="wtf perforce." />
+    <MESSAGE value="p4 fixed. now to try and make a jar. this WILL fail. so I WILL see this commit message again. hi me." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -908,80 +950,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="method#ConfigDoc#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#parseNode#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#writeFromTemplate#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#makeNewFile#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#cleanDescription#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateNavigation#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templatePage#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateGroup#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateOptions#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateOption#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateContentsOfOption#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateContentsOfOptionWithoutAcceptableValues#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateContentsOfOptionWithShortName#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#assignOptionAttributesToVelocityContext#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateContentsOfOptionWithAcceptableValues#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateAcceptableValues#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#main#0;class#ConfigDoc#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/caplin/ConfigDoc.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/caplin/ConfigDocTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="29" selection-start="4081" selection-end="4081" vertical-scroll-proportion="0.0">
+        <state line="16" column="13" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="method#ConfigDoc#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#parseNode#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#writeFromTemplate#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#makeNewFile#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#cleanDescription#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateNavigation#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templatePage#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateGroup#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateOptions#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateOption#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateContentsOfOption#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateContentsOfOptionWithoutAcceptableValues#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateContentsOfOptionWithShortName#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#assignOptionAttributesToVelocityContext#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateContentsOfOptionWithAcceptableValues#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateAcceptableValues#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#main#0;class#ConfigDoc#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/caplin/ConfigDoc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="34" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="method#ConfigDoc#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#parseNode#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#writeFromTemplate#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#makeNewFile#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#cleanDescription#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateNavigation#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templatePage#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateGroup#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateOptions#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateOption#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateContentsOfOption#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateContentsOfOptionWithoutAcceptableValues#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateContentsOfOptionWithShortName#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#assignOptionAttributesToVelocityContext#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateContentsOfOptionWithAcceptableValues#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateAcceptableValues#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#main#0;class#ConfigDoc#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/platform-config-doc.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inputFile.xml">
@@ -989,11 +969,6 @@
         <state line="17" column="48" selection-start="652" selection-end="652" vertical-scroll-proportion="0.3203991">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/XMLtoHTMLConverter.iml">
@@ -1006,41 +981,44 @@
         <state line="6" column="17" selection-start="214" selection-end="214" vertical-scroll-proportion="0.11171961" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/caplin/ConfigDoc.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/page.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="32" selection-start="799" selection-end="799" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="method#ConfigDoc#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#parseNode#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#writeFromTemplate#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#makeNewFile#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#cleanDescription#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateNavigation#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templatePage#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateGroup#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateOptions#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateOption#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateContentsOfOption#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateContentsOfOptionWithoutAcceptableValues#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateContentsOfOptionWithShortName#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#assignOptionAttributesToVelocityContext#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateContentsOfOptionWithAcceptableValues#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#templateAcceptableValues#0;class#ConfigDoc#0" expanded="false" />
-            <element signature="method#main#0;class#ConfigDoc#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="9" column="7" selection-start="121" selection-end="121" vertical-scroll-proportion="0.16757941" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/java/com/caplin/ConfigDocTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/acceptableValues.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="20" selection-start="799" selection-end="799" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="1" selection-start="214" selection-end="214" vertical-scroll-proportion="0.22343922">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/page.vm">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/caplin/ConfigDoc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="7" selection-start="121" selection-end="121" vertical-scroll-proportion="0.16721311">
+        <state line="14" column="13" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/caplin/ConfigDocTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="19" selection-start="1112" selection-end="1112" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/artifacts/XMLtoHTMLConverter_jar.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="12" selection-start="890" selection-end="890" vertical-scroll-proportion="0.24205914">
           <folding />
         </state>
       </provider>
@@ -1051,10 +1029,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>XMLtoHTMLConverter:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1109,7 +1089,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>commons-collections-3.2.1</last-edited>
+          <last-edited>libs</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

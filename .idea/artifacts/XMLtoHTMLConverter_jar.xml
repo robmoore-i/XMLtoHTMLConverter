@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="XMLtoHTMLConverter:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/XMLtoHTMLConverter_jar</output-path>
+    <root id="archive" name="XMLtoHTMLConverter.jar">
+      <element id="module-output" name="XMLtoHTMLConverter" />
+      <element id="module-test-output" name="XMLtoHTMLConverter" />
+      <element id="extracted-dir" path="$APPLICATION_HOME_DIR$/lib/junit-4.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/lib/commons-collections-3.2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/lib/commons-lang-2.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/lib/velocity-1.7.jar" path-in-jar="/" />
+      <element id="library" level="project" name="libs" />
+    </root>
+  </artifact>
+</component>
