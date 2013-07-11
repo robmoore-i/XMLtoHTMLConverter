@@ -10,5 +10,4 @@ repositories {
 dependencies {
     compile(group: 'junit', name: 'junit', version: '4.9')
     compile('velocity:velocity:1.5')
-
 }
