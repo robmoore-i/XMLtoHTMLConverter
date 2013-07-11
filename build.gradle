@@ -13,3 +13,11 @@ dependencies {
     compile('commons-collections:commons-collections:3.2.1')
     compile('commons-lang:commons-lang:2.6')
 }
+
+test {
+    testLogging {
+        events 'started', 'passed'
+    }
+}
+
+// gradle -Dtest.single=ConfigDocTest test
