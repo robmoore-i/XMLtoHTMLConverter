@@ -11,9 +11,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.*;
 
-
 public class ConfigDoc {
-
     private InputStream input;
 
     public ConfigDoc(InputStream input) {
@@ -22,11 +20,21 @@ public class ConfigDoc {
     }
 
     public String parse() throws Exception {
-        DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-        Document doc = dBuilder.parse(input);
-        Node rootElement = doc.getDocumentElement();
+        DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+        Document document = documentBuilder.parse(input);
+        Node rootElement = document.getDocumentElement();
         if (!"DSDK".equals(rootElement.getNodeName())) {
             throw new Exception("Incorrect root node. Should be DSDK");
+        }
+        //for each 1st level node (= for each page) {
+        //parse it and put it in a file
+        //}
+        //gg
+        NodeList pages = rootElement.getChildNodes();
+        for (int i = 0; i < pages.getLength(); i++) {
+            Node page = pages.item(i);
+            makeNewFile(page.getAttributes().getNamedItem("name").getNodeValue(), templatePage(page));
+            //gg
         }
         return parseNode(rootElement);
     }
@@ -34,36 +42,31 @@ public class ConfigDoc {
     private String parseNode(Node currentNode) throws Exception {
         StringBuilder output = new StringBuilder("");
         NodeList nodeList = currentNode.getChildNodes();
-        int pageNumber = 1;
         for (int count = 0; count < nodeList.getLength(); count++) {
             Node currentChild = nodeList.item(count);
             String nodeName = currentChild.getNodeName().toLowerCase();
-            if (nodeName.equals("page")) {
-                String templatedPage = templatePage(currentChild);
-                makeNewFile(currentChild.getAttributes().getNamedItem("name").getNodeValue() + " pageNumber-" + pageNumber, templatedPage);
-                output.append(templatedPage);
-                pageNumber++;
-            } else if (nodeName.equals("option")) {
-                String templatedOption = templateOption(currentChild);
-                output.append(templatedOption);
-            } else if (nodeName.equals("options")) {
-                String templatedOptions = templateOptions(currentChild);
-                output.append(templatedOptions);
-            } else if (nodeName.equals("group")) {
-                String templatedGroup = templateGroup(currentChild);
-                output.append(templatedGroup);
+            switch (nodeName) {
+                case "option":
+                    output.append(templateOption(currentChild));
+                    break;
+                case "options":
+                    output.append(templateOptions(currentChild));
+                    break;
+                case "group":
+                    output.append(templateGroup(currentChild));
+                    break;
             }
         }
         return output.toString();
     }
 
     //<UTILS>
-    private StringWriter writeFromTemplate(VelocityContext context, String templateName) {
+    public String writeFromTemplate(VelocityContext context, String templateName) {
         Template template = Velocity.getTemplate("\\src\\main\\resources\\" + templateName);
         StringWriter stringWriter = new StringWriter();
         template.merge(context, stringWriter);
-        return stringWriter;
-    }
+        return stringWriter.toString();
+    } //TESTED
 
     private void makeNewFile(String pageName, String contents) throws IOException {
         File writeFile = new File("C:/Users/robertm/Desktop/" + pageName + ".html");
@@ -71,69 +74,79 @@ public class ConfigDoc {
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         bufferedWriter.write(contents);
         bufferedWriter.close();
-    }
+    } //UNTESTABLE
 
-    private String cleanDescription(String descriptionText) {
+    public String cleanDescription(String descriptionText) {
         String editedDescription = descriptionText;
         editedDescription = editedDescription.replace("<![CDATA[", "");
         editedDescription = editedDescription.replace("]]>", "");
         editedDescription = editedDescription.replace("\\verbatim", "");
         editedDescription = editedDescription.replace("\\endverbatim", "");
+        editedDescription = editedDescription.replace("\\note", "<br/>Note:");
+        editedDescription = editedDescription.replace("\\anchor", "");
+        editedDescription = editedDescription.replace("\\ref", "");
+        editedDescription = editedDescription.replace("Format:", "<br/>Format:<br/>");
+        editedDescription = editedDescription.replace("[value]", "[value]<br/>");
         return editedDescription;
+    } //TESTED
+
+    public String cleanPage(String page) {
+        return page.replace("\r\n", "").replace("\n", "").replace("\r", "");
     }
     //</UTILS>
 
     //<PAGE>
-    private String templatePage(Node node) throws Exception {
+    public String templatePage(Node node) throws Exception {
+        VelocityContext context = new VelocityContext();
+        context.put("title", node.getAttributes().getNamedItem("name").getNodeValue());
+        context.put("description", cleanDescription(node.getFirstChild().getTextContent()));
         StringBuilder stringBuilder = new StringBuilder("");
-        stringBuilder.append("<h2>").append(node.getAttributes().getNamedItem("name").getNodeValue()).append("</h2>");
-        stringBuilder.append("<div>").append(cleanDescription(node.getFirstChild().getTextContent())).append("</div>");
         for (int i = 1; i < node.getChildNodes().getLength(); i++) { //start at 1 to miss out "top-description" which is done above
-            stringBuilder.append(parseNode(node.getChildNodes().item(i))).append("<div></div>");
+            stringBuilder.append(parseNode(node.getChildNodes().item(i)));
         }
-        return stringBuilder.toString();
-    } //PAGE
+        context.put("body", stringBuilder.toString());
+        return writeFromTemplate(context, "page.vm");
+    } //TESTED
     //</PAGE>
 
     //<GROUP>
-    private String templateGroup(Node node) throws Exception {
-        StringBuilder stringBuilder = new StringBuilder("");
-        stringBuilder.append("<h3>").append("Group: ").append(node.getAttributes().getNamedItem("name").getNodeValue()).append("</h3>");
-        stringBuilder.append(cleanDescription(node.getFirstChild().getTextContent())).append("");
-        stringBuilder.append(parseNode(node));
-        stringBuilder.append("<div>End of group: ").append(node.getAttributes().getNamedItem("name").getNodeValue()).append("</div>");
-        return stringBuilder.toString();
-    } //DONE
+    public String templateGroup(Node node) throws Exception {
+        VelocityContext context = new VelocityContext();
+        context.put("title", node.getAttributes().getNamedItem("name").getNodeValue());
+        context.put("description", cleanDescription(node.getFirstChild().getTextContent()));
+        context.put("body", parseNode(node));
+        return writeFromTemplate(context, "group.vm");
+    } //TESTED
     //</GROUP>
 
     //<OPTIONS>
-    private String templateOptions(Node node) throws Exception {
+    public String templateOptions(Node node) throws Exception {
         StringBuilder output = new StringBuilder("");
         for (int i = 0; i < node.getChildNodes().getLength(); i++) {
             Node currentChild = node.getChildNodes().item(i);
-            output.append(templateOption(currentChild)).append("<div></div>");
+            output.append(templateOption(currentChild));
         }
         return output.toString();
     } //DONE
     //</OPTIONS>
 
     //<OPTION>
-    private String templateOption(Node node) throws Exception {
+    public String templateOption(Node node) throws Exception {
         VelocityContext context = new VelocityContext();
         assignOptionAttributesToVelocityContext(node, context);
         String templatedAcceptableValues = templateContentsOfOption(node, context);
-        StringWriter stringWriter = writeFromTemplate(context, "option.vm");
-        return (String.valueOf(stringWriter) + templatedAcceptableValues);
-    } //DONE
+        String templatedOption = writeFromTemplate(context, "option.vm");
+        return (templatedOption + templatedAcceptableValues + "<br/>");
+    } //TESTED
 
     private String templateContentsOfOption(Node node, VelocityContext context) {
-        String templatedAcceptableValues = "";
+        String templatedContentsOfOption = "";
         if (node.getChildNodes().getLength() == 1) {
-            templatedAcceptableValues = templateContentsOfOptionWithoutAcceptableValues(node, context);
+            templatedContentsOfOption = templateContentsOfOptionWithoutAcceptableValues(node, context);
         } else if (node.getChildNodes().getLength() == 2) {
-            templatedAcceptableValues = templateContentsOfOptionWithAcceptableValues(node, context);
+            templatedContentsOfOption = templateContentsOfOptionWithAcceptableValues(node, context);
         }
-        return templatedAcceptableValues;
+        return templatedContentsOfOption;
     }
 
     private String templateContentsOfOptionWithoutAcceptableValues(Node node, VelocityContext context) {
@@ -142,7 +155,7 @@ public class ConfigDoc {
     }
 
     private String templateContentsOfOptionWithAcceptableValues(Node node, VelocityContext context) {
-        String templatedAcceptableValues = templateAcceptableValues(node.getFirstChild(), context);
+        String templatedAcceptableValues = templateAcceptableValues(node.getFirstChild());
         context.put("description", cleanDescription(node.getLastChild().getTextContent()));
         return templatedAcceptableValues;
     }
@@ -157,15 +170,24 @@ public class ConfigDoc {
         }
     }
 
-    private String templateAcceptableValues(Node node, VelocityContext context) {
+    private String templateAcceptableValues(Node node) {
+        VelocityContext context = new VelocityContext();
         for (int i = 0; i < node.getChildNodes().getLength(); i++) {
             Node currentChild = node.getChildNodes().item(i);
-            context.put("name" + String.valueOf(i), currentChild.getAttributes().getNamedItem("name").getTextContent());
-            context.put("value" + String.valueOf(i), currentChild.getAttributes().getNamedItem("value").getTextContent());
-            context.put("description" + String.valueOf(i), cleanDescription(currentChild.getFirstChild().getTextContent()));
+            try {
+                context.put("name" + String.valueOf(i), currentChild.getAttributes().getNamedItem("name").getTextContent());
+            } catch (Exception ignored) {
+            }
+            try {
+                context.put("value" + String.valueOf(i), currentChild.getAttributes().getNamedItem("value").getTextContent());
+            } catch (Exception ignored) {
+            }
+            try {
+                context.put("description" + String.valueOf(i), cleanDescription(currentChild.getFirstChild().getTextContent()));
+            } catch (Exception ignored) {
+            }
         }
-        StringWriter stringWriter = writeFromTemplate(context, "acceptableValues.vm");
-        return String.valueOf(stringWriter);
+        return writeFromTemplate(context, "acceptableValues.vm");
     }
     //</OPTION>
 

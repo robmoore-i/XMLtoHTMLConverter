@@ -1,0 +1,5 @@
+<ul>
+#foreach( $pageName in $pageNames )
+    <li>$pageName</li>
+#end
+</ul>
