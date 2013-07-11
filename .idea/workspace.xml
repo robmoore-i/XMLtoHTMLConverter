@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/inputs/gInput.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/readme.txt" />
-      <change type="DELETED" beforePath="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\.idea\artifacts\XMLtoHTMLConverter_jar.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\.idea\libraries\libs.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\README" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src\lib\commons-collections-3.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src\lib\commons-lang-2.6.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src\lib\velocity-1.7.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src\main\java\META-INF\MANIFEST.MF" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/caplin/ConfigDoc.java" afterPath="$PROJECT_DIR$/src/main/java/com/caplin/ConfigDoc.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/XMLtoHTMLConverter.iml" afterPath="$PROJECT_DIR$/XMLtoHTMLConverter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/inputs/gInput.xml" afterPath="$PROJECT_DIR$/src/main/resources/inputs/gInput.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="XMLtoJavaDocConverter.iws" />
@@ -25,7 +14,7 @@
     <file path="/EvalTool.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1372845812778" ignored="false" />
     <file path="/StringTool.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373028334081" ignored="false" />
     <file path="/XMLData.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1372858288373" ignored="false" />
-    <file path="/Dummy.txt" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373555429798" ignored="false" />
+    <file path="/Dummy.txt" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373556878342" ignored="false" />
     <file path="/TranslatorTest.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1372952487997" ignored="false" />
     <file path="/Translator.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1372926770699" ignored="false" />
     <file path="/README" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373388418605" ignored="false" />
@@ -69,7 +58,7 @@
     <file path="/acceptableValues.vm" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373362961993" ignored="false" />
     <file path="/asjofb.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373383323622" ignored="false" />
     <file path="/DoStuffClass.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373383631681" ignored="false" />
-    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/platform-config-doc.iws" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373556780697" ignored="false" />
+    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/platform-config-doc.iws" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373556860897" ignored="false" />
     <file path="/todo" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373444249185" ignored="false" />
     <file path="/group.vm" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373444575262" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373547260756" ignored="false" />
@@ -147,8 +136,10 @@
       <file leaf-file-name="ConfigDoc.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/caplin/ConfigDoc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="28" selection-start="225" selection-end="225" vertical-scroll-proportion="0.2542735">
-              <folding />
+            <state line="18" column="39" selection-start="575" selection-end="575" vertical-scroll-proportion="0.65665233">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -366,56 +357,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="caplin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="XMLtoHTMLConverter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="XMLtoHTMLConverter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="XMLtoHTMLConverter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="XMLtoHTMLConverter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dictionaries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="XMLtoHTMLConverter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="XMLtoHTMLConverter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copyright" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -835,7 +776,11 @@
       <created>1373547106366</created>
       <updated>1373547106366</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="removing things">
+      <created>1373556883279</created>
+      <updated>1373556883279</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -850,16 +795,16 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32837406" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20487265" sideWeight="0.52497345" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47502658" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20487265" sideWeight="0.52396166" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47603834" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32837406" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32837406" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995749" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -906,7 +851,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding things" />
+    <option name="LAST_COMMIT_MESSAGE" value="removing things" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -920,7 +865,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="Added some styling for the Page_TopDescription format" />
     <MESSAGE value="Committing a working version before making an edit to &quot;changeInputToNameVaueFormat(string)&quot;" />
     <MESSAGE value="Solved the problem with there being a space between the value section of an attribute of the XML tag." />
     <MESSAGE value="Fixing a spelling error." />
@@ -945,6 +889,7 @@
     <MESSAGE value="wtf perforce." />
     <MESSAGE value="p4 fixed. now to try and make a jar. this WILL fail. so I WILL see this commit message again. hi me." />
     <MESSAGE value="adding things" />
+    <MESSAGE value="removing things" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -980,14 +925,18 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/caplin/ConfigDoc.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="13" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/caplin/ConfigDoc.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1041,10 +990,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/inputs/gInput.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/caplin/ConfigDoc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="28" selection-start="225" selection-end="225" vertical-scroll-proportion="0.2542735">
-          <folding />
+        <state line="18" column="39" selection-start="575" selection-end="575" vertical-scroll-proportion="0.65665233">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
