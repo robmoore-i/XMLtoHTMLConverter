@@ -1,5 +1,6 @@
+<h1>Navigation page</h1>
 <ul>
 #foreach( $pageName in $pageNames )
-    <li>$pageName</li>
+<li>$pageName</li>
 #end
 </ul>

@@ -10,6 +10,7 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.*;
+import java.util.ArrayList;
 
 public class ConfigDoc {
     private InputStream input;
@@ -19,24 +20,22 @@ public class ConfigDoc {
         Velocity.setProperty("directive.set.null.allowed", true);
     }
 
-    public String parse() throws Exception {
+    public void parse() throws Exception {
         DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         Document document = documentBuilder.parse(input);
         Node rootElement = document.getDocumentElement();
         if (!"DSDK".equals(rootElement.getNodeName())) {
             throw new Exception("Incorrect root node. Should be DSDK");
         }
-        //for each 1st level node (= for each page) {
-        //parse it and put it in a file
-        //}
-        //gg
         NodeList pages = rootElement.getChildNodes();
+        String[] pageNames = new String[pages.getLength()];
         for (int i = 0; i < pages.getLength(); i++) {
             Node page = pages.item(i);
             makeNewFile(page.getAttributes().getNamedItem("name").getNodeValue(), templatePage(page));
+            pageNames[i] = page.getAttributes().getNamedItem("name").getNodeValue();
             //gg
         }
-        return parseNode(rootElement);
+        makeNewFile("Navigation page", templateNavigation(pageNames));
     }
 
     private String parseNode(Node currentNode) throws Exception {
@@ -92,8 +91,16 @@ public class ConfigDoc {
 
     public String cleanPage(String page) {
         return page.replace("\r\n", "").replace("\n", "").replace("\r", "");
-    }
+    } //TESTED
     //</UTILS>
+
+    //<NAVIGATION>
+    public String templateNavigation(String[] pageNames) throws Exception {
+        VelocityContext context = new VelocityContext();
+        context.put("pageNames", pageNames);
+        return writeFromTemplate(context, "navigation.vm");
+    } //TESTED
+    //</NAVIGATION>
 
     //<PAGE>
     public String templatePage(Node node) throws Exception {
@@ -120,14 +127,14 @@ public class ConfigDoc {
     //</GROUP>
 
     //<OPTIONS>
-    public String templateOptions(Node node) throws Exception {
+    private String templateOptions(Node node) throws Exception {
         StringBuilder output = new StringBuilder("");
         for (int i = 0; i < node.getChildNodes().getLength(); i++) {
             Node currentChild = node.getChildNodes().item(i);
             output.append(templateOption(currentChild));
         }
         return output.toString();
-    } //DONE
+    } //TESTED BY CONJECTURE
     //</OPTIONS>
 
     //<OPTION>
@@ -140,11 +147,13 @@ public class ConfigDoc {
     } //TESTED
 
     private String templateContentsOfOption(Node node, VelocityContext context) {
-        String templatedContentsOfOption = "";
+        String templatedContentsOfOption;
         if (node.getChildNodes().getLength() == 1) {
             templatedContentsOfOption = templateContentsOfOptionWithoutAcceptableValues(node, context);
-        } else if (node.getChildNodes().getLength() == 2) {
+        } else if (node.getChildNodes().getLength() == 2 && !node.getFirstChild().getNodeName().equals("shortName")) {
             templatedContentsOfOption = templateContentsOfOptionWithAcceptableValues(node, context);
+        } else {
+            templatedContentsOfOption = templateContentsOfOptionWithShortName(node, context);
         }
         return templatedContentsOfOption;
     }
@@ -154,41 +163,48 @@ public class ConfigDoc {
         return ""; //if this is called then there are no acceptable values so an empty string should be returned by the function "templateContentsOfOption"
     }
 
+    private String templateContentsOfOptionWithShortName(Node node, VelocityContext context) {
+        context.put("description", cleanDescription(node.getLastChild().getTextContent()));
+        return "";
+    }
+
+    private void assignOptionAttributesToVelocityContext(Node node, VelocityContext context) {
+        ArrayList<String> names = new ArrayList<>();
+        ArrayList<String> values = new ArrayList<>();
+        for (int i = 0; i < node.getAttributes().getLength(); i++) {
+            names.add(node.getAttributes().item(i).getNodeName());
+            values.add(node.getAttributes().item(i).getNodeValue());
+        }
+        context.put("names", names);
+        context.put("values", values);
+        context.put("length", names.size() - 1);
+    }
+
+    //<ACCEPTABLE-VALUES>
     private String templateContentsOfOptionWithAcceptableValues(Node node, VelocityContext context) {
         String templatedAcceptableValues = templateAcceptableValues(node.getFirstChild());
         context.put("description", cleanDescription(node.getLastChild().getTextContent()));
         return templatedAcceptableValues;
     }
 
-    private void assignOptionAttributesToVelocityContext(Node node, VelocityContext context) {
-        String[] possibleAttributes = new String[]{"name", "type", "default", "deprecated", "java", "min", "max"};
-        for (String possibleAttribute : possibleAttributes) {
-            try {
-                context.put(possibleAttribute, node.getAttributes().getNamedItem(possibleAttribute).getNodeValue());
-            } catch (Exception ignored) {
-            }
-        }
-    }
-
-    private String templateAcceptableValues(Node node) {
+    public String templateAcceptableValues(Node node) {
         VelocityContext context = new VelocityContext();
+        ArrayList<String> names = new ArrayList<>();
+        ArrayList<String> values = new ArrayList<>();
+        ArrayList<String> descriptions = new ArrayList<>();
         for (int i = 0; i < node.getChildNodes().getLength(); i++) {
             Node currentChild = node.getChildNodes().item(i);
-            try {
-                context.put("name" + String.valueOf(i), currentChild.getAttributes().getNamedItem("name").getTextContent());
-            } catch (Exception ignored) {
-            }
-            try {
-                context.put("value" + String.valueOf(i), currentChild.getAttributes().getNamedItem("value").getTextContent());
-            } catch (Exception ignored) {
-            }
-            try {
-                context.put("description" + String.valueOf(i), cleanDescription(currentChild.getFirstChild().getTextContent()));
-            } catch (Exception ignored) {
-            }
+            names.add(currentChild.getAttributes().getNamedItem("name").getNodeValue());
+            values.add(currentChild.getAttributes().getNamedItem("value").getNodeValue());
+            descriptions.add(cleanDescription(currentChild.getFirstChild().getTextContent()));
         }
+        context.put("names", names);
+        context.put("values", values);
+        context.put("descriptions", descriptions);
+        context.put("length", names.size() - 1);
         return writeFromTemplate(context, "acceptableValues.vm");
-    }
+    } //TESTED
+    //</ACCEPTABLE-VALUES>
     //</OPTION>
 
     public static void main(String[] args) throws Exception {

@@ -1,0 +1,10 @@
+<table border="1">
+<tr>
+<td>name</td><td>value</td><td>description</td>
+</tr>
+#foreach( $i in [0..$length] )
+<tr>
+<td>$names[$i]</td><td>$values[$i]</td><td>$descriptions[$i]</td>
+</tr>
+#end
+</table>
