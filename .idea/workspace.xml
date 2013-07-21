@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="25b59644-5b63-4c8a-90fd-b14c31cc6a97" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/commons_collections_3_2_1.xml" />
@@ -20,6 +21,73 @@
     <ignored path="XMLtoHTMLConverter.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="25b59644-5b63-4c8a-90fd-b14c31cc6a97" time="1373263402710" ignored="false" />
+=======
+    <list default="true" id="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" name="Default" comment="removing warnings">
+      <change type="DELETED" beforePath="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\inputFile.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/inputs/gInput.xml" afterPath="$PROJECT_DIR$/src/main/resources/inputs/gInput.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle.properties" afterPath="$PROJECT_DIR$/gradle.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+    <ignored path="XMLtoJavaDocConverter.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/XMLParserTest.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1372939739017" ignored="false" />
+    <file path="/fragment.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373532634626" ignored="false" />
+    <file path="/XMLParser.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373282087708" ignored="false" />
+    <file path="/XMLTag.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1372858751786" ignored="false" />
+    <file path="/EvalTool.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1372845812778" ignored="false" />
+    <file path="/StringTool.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373028334081" ignored="false" />
+    <file path="/XMLData.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1372858288373" ignored="false" />
+    <file path="/Dummy.txt" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373556994859" ignored="false" />
+    <file path="/TranslatorTest.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1372952487997" ignored="false" />
+    <file path="/Translator.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1372926770699" ignored="false" />
+    <file path="/README" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373388418605" ignored="false" />
+    <file path="/XMLDataFormatter.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1372948694575" ignored="false" />
+    <file path="/FormatterTest.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373276901086" ignored="false" />
+    <file path="/Format of the XML files" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1372946410685" ignored="false" />
+    <file path="/Format of the output HTML files" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373380109393" ignored="false" />
+    <file path="/XMLTranslator.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373015718388" ignored="false" />
+    <file path="/ParserTest.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1372955263857" ignored="false" />
+    <file path="/VelocityXMLFormatter.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373037871819" ignored="false" />
+    <file path="/Option_OptionDescription.vm" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373033422102" ignored="false" />
+    <file path="/stylesheet.css" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373036155183" ignored="false" />
+    <file path="/Page_TopDescription.vm" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373036093790" ignored="false" />
+    <file path="/StringUtils.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373282329133" ignored="false" />
+    <file path="/UtilsTest.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373273410636" ignored="false" />
+    <file path="/XMLFormatOrganiser.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373277217262" ignored="false" />
+    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/main/java/com/caplin/VelocityThingy.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373301166207" ignored="false" />
+    <file path="/VelocityThingy.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373301165539" ignored="false" />
+    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/main/java/com/caplin/ConfigDoc.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373475107356" ignored="false" />
+    <file path="/ConfigDoc.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373475003835" ignored="false" />
+    <file path="/ParserUtils.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373282330025" ignored="false" />
+    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/main/java/com/caplin/Utils.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373285680750" ignored="false" />
+    <file path="/Utils.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373285677237" ignored="false" />
+    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/test/java/com/caplin/ConfigDocTest.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373366124127" ignored="false" />
+    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/main/java/com/caplin/VelocityDemo.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373297707393" ignored="false" />
+    <file path="/ConfigDocTest.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373546901276" ignored="false" />
+    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/main/resources/mytemplate.vm" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373300148290" ignored="false" />
+    <file path="/mytemplate.vm" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373296019627" ignored="false" />
+    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/main/java/com/caplin/FileWrite.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373296755284" ignored="false" />
+    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/main/java/com/caplin/FileWriter.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373296983223" ignored="false" />
+    <file path="/FileWrite.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373297381276" ignored="false" />
+    <file path="/FileWriter.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373296912660" ignored="false" />
+    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/main/java/com/caplin/OutputFileWriter.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373297491966" ignored="false" />
+    <file path="/OutputFileWriter.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373297027143" ignored="false" />
+    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/main/resources/options.vm" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373300297145" ignored="false" />
+    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/main/resources/option.vm" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373300696664" ignored="false" />
+    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/main/resources/overallTemplate.vm" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373300238951" ignored="false" />
+    <file path="/option.vm" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373300691697" ignored="false" />
+    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/main/java/com/caplin/VelocityManagerThing.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373301222719" ignored="false" />
+    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/main/resources/acceptableValues.vm" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373362970903" ignored="false" />
+    <file path="/acceptableValues.vm" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373362961993" ignored="false" />
+    <file path="/asjofb.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373383323622" ignored="false" />
+    <file path="/DoStuffClass.java" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373383631681" ignored="false" />
+    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/platform-config-doc.iws" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373556975974" ignored="false" />
+    <file path="/todo" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373444249185" ignored="false" />
+    <file path="/group.vm" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373444575262" ignored="false" />
+    <file path="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373547260756" ignored="false" />
+    <file path="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/build.gradle" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373556322133" ignored="false" />
+    <file path="/build.gradle" changelist="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" time="1373556080562" ignored="false" />
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +96,11 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
+<<<<<<< HEAD
     <option name="PATCH_PATH" value="" />
+=======
+    <option name="PATCH_PATH" value="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter" />
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
   </component>
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
@@ -50,8 +122,13 @@
         <option name="CONDITION_ENABLED" value="true" />
         <option name="CLASS_FILTERS_ENABLED" value="false" />
         <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+<<<<<<< HEAD
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
+=======
+        <option name="CONDITION" value="&#13;&#13;JAVA" />
+        <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
       </breakpoint>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -67,8 +144,13 @@
         <option name="CONDITION_ENABLED" value="true" />
         <option name="CLASS_FILTERS_ENABLED" value="false" />
         <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+<<<<<<< HEAD
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
+=======
+        <option name="CONDITION" value="&#13;&#13;JAVA" />
+        <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
       </breakpoint>
     </breakpoint_any>
     <breakpoint_rules />
@@ -76,6 +158,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
+<<<<<<< HEAD
     <favorites_list name="XMLtoHTMLConverter" />
   </component>
   <component name="FileEditorManager">
@@ -84,6 +167,25 @@
         <entry file="file://$PROJECT_DIR$/src/VelocityXMLFormatter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="32" column="19" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.61433446">
+=======
+    <favorites_list name="XMLtoJavaDocConverter" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="44" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readme.txt" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/readme.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
               <folding />
             </state>
           </provider>
@@ -104,11 +206,66 @@
       <MyDateState />
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
     <option name="y" value="24" />
     <option name="width" value="1301" />
     <option name="height" value="744" />
+=======
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/asjofb.java" />
+        <option value="$PROJECT_DIR$/src/DoStuffClass.java" />
+        <option value="$PROJECT_DIR$/platform-config-doc.iml" />
+        <option value="$PROJECT_DIR$/platform-config-doc.ipr" />
+        <option value="$PROJECT_DIR$/inputFile.xml" />
+        <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/src/main/java/com/caplin/todo" />
+        <option value="$PROJECT_DIR$/src/main/resources/group.vm" />
+        <option value="$PROJECT_DIR$/src/main/java/com/caplin/Utils.java" />
+        <option value="$PROJECT_DIR$/src/ConfigDoc.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/page.vm" />
+        <option value="$PROJECT_DIR$/test/java/com/caplin/ConfigDocTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/caplin/ConfigDocTest.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/com/caplin/ConfigDoc.java" />
+        <option value="$PROJECT_DIR$/gradle.properties" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="60" />
+    <option name="y" value="-8" />
+    <option name="width" value="1868" />
+    <option name="height" value="1096" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Android Lint</id>
+          </State>
+          <State>
+            <id>Error handling</id>
+          </State>
+          <State>
+            <id>Visibility issues</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Abstraction issues</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -171,6 +328,7 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+<<<<<<< HEAD
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -197,6 +355,18 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value=".idea" />
+=======
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caplin" />
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -210,11 +380,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="scopes" />
+=======
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -228,6 +406,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -251,11 +430,27 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="copyright" />
+=======
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caplin" />
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
@@ -280,12 +475,104 @@
     <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/lib" />
   </component>
   <component name="RunManager">
+=======
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_directory_selection" value="$PROJECT_DIR$/test" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.lastSelected" value="editor" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Perforce/robertm_SPARE1_6426/JavaDevelopment/sandbox/richardc/platform-config-doc/src/lib/velocity-1.7.jar!/" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.splitter.details.proportions" value="0.36014405" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src" />
+      <recent name="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter" />
+      <recent name="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src\main\java" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src\main" />
+      <recent name="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\test\java" />
+      <recent name="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src\java\com\caplin" />
+      <recent name="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\src" />
+      <recent name="C:\Users\robertm\IdeaProjects\XMLtoHTMLConverter\Formatting documentation" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Groovy.build">
+    <configuration default="false" name="ConfigDoc" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.caplin.ConfigDoc" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="C:\Users\robertm\Desktop\gInput.xml" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="XMLtoHTMLConverter" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="build" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
+      <module name="XMLtoHTMLConverter" />
+      <setting name="path" value="file://$PROJECT_DIR$/build.gradle" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="Make" enabled="false" />
+      </method>
+    </configuration>
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
       <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
+<<<<<<< HEAD
+=======
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method />
+    </configuration>
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -294,6 +581,22 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+<<<<<<< HEAD
+=======
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -321,6 +624,7 @@
       <listeners />
       <method />
     </configuration>
+<<<<<<< HEAD
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -334,6 +638,8 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
+=======
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
     <configuration default="true" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
@@ -368,13 +674,27 @@
       <patterns />
       <method />
     </configuration>
+<<<<<<< HEAD
     <list size="0" />
+=======
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Application.ConfigDoc" />
+      <item index="1" class="java.lang.String" itemvalue="Groovy.build" />
+    </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Groovy.build" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ConfigDoc" />
+      </list>
+    </recent_temporary>
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+<<<<<<< HEAD
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="25b59644-5b63-4c8a-90fd-b14c31cc6a97" name="Default" comment="" />
@@ -407,6 +727,266 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+=======
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="682d8cca-c40a-4dbe-b0d5-3fe89cb99e45" name="Default" comment="" />
+      <created>1372841943732</created>
+      <updated>1372841943732</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Committing files">
+      <created>1372868711014</created>
+      <updated>1372868711014</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Removing warnings and spelling errors... It's necessary and you know it.">
+      <created>1372869013798</created>
+      <updated>1372869013798</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Refactoring an array copy to reduce the size of a method.">
+      <created>1372869084224</created>
+      <updated>1372869084224</updated>
+    </task>
+    <task id="LOCAL-00004" summary="The translator now removes the CDATA and verbatim things from the text of the tags.">
+      <created>1372926993065</created>
+      <updated>1372926993065</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Making the parser be able to get the description text and give it to the translator. wip.">
+      <created>1372928453574</created>
+      <updated>1372928453574</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Writing a test for getting the tagClass of the first tag in order to make it easier to extract the text from inside the description tags.">
+      <created>1372931749822</created>
+      <updated>1372931749822</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Committing a working version before trying to make the method that will get the text from within the &lt;x-description&gt; tags.">
+      <created>1372933247012</created>
+      <updated>1372933247012</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Can now get and translate the description of the tags. All tests pass.">
+      <created>1372936927908</created>
+      <updated>1372936927908</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Adding a test for getTagContent since its used in more than one method and so should have tests. Also formatting everywhere.">
+      <created>1372937765048</created>
+      <updated>1372937765048</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Looks like I have a bad case of schrödinger's NullPointer. The other tests all pass still. Because the formatter tests are failing this is a wip.">
+      <created>1372941778281</created>
+      <updated>1372941778281</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Restarting the formatting section of the code. The NullPointerException isn't budging and the debugger says that there is no NullPointer so there isn't much I can do but start again.">
+      <created>1372942859002</created>
+      <updated>1372942859002</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Schrödinger's NullPointer was caused by java iterating too many times in a for each loop..... GJ JAVA. GJ.  It's gone now and the tests pass. gj me.">
+      <created>1372944935610</created>
+      <updated>1372944935610</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Adding the theory files and the tests for finalising the page.">
+      <created>1372947924001</created>
+      <updated>1372947924001</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Changing pathing">
+      <created>1372948040862</created>
+      <updated>1372948040862</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Update README">
+      <created>1372948152323</created>
+      <updated>1372948152323</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Adding some tests for some methods. The translation for the option tag isn't working because (&quot;stack trace&quot;): Translator.translateDescription -&gt; Parser.getContent -&gt; It can't deal with there being attributes in the opening tag because it unbalances it.">
+      <created>1372953348179</created>
+      <updated>1372953348179</updated>
+    </task>
+    <task id="LOCAL-00017" summary="reformatting the test due to long strings.">
+      <created>1372953495902</created>
+      <updated>1372953495902</updated>
+    </task>
+    <task id="LOCAL-00018" summary="All the tests now pass so I can start to format all the types of tag and then all I have to do is meld it together.">
+      <created>1373013145275</created>
+      <updated>1373013145275</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Committing the latest working version before I attempt to download and install velocity...">
+      <created>1373018121949</created>
+      <updated>1373018121949</updated>
+    </task>
+    <task id="LOCAL-00020" summary="After more than 4 hours of stonewalling, me and Gustavo finally managed to get velocity working. I'm using velocity for the formatting now.">
+      <created>1373028261240</created>
+      <updated>1373028261240</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Rearrangement">
+      <created>1373028440251</created>
+      <updated>1373028440251</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Adding all the velocity stuff and making some functions on the velocity libraries and all kinds of other shizzle.">
+      <created>1373031185023</created>
+      <updated>1373031185023</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Velocity stuff is fully integrated. Moar tests will come soon. Added a stylesheet to the templates folder.">
+      <created>1373033670746</created>
+      <updated>1373033670746</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Made the test for the Page_TopDescription format pass.">
+      <created>1373035943999</created>
+      <updated>1373035943999</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Added some styling for the Page_TopDescription format">
+      <created>1373036353004</created>
+      <updated>1373036353004</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Committing a working version before making an edit to &quot;changeInputToNameVaueFormat(string)&quot;">
+      <created>1373036494276</created>
+      <updated>1373036494276</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Solved the problem with there being a space between the value section of an attribute of the XML tag.">
+      <created>1373037708191</created>
+      <updated>1373037708191</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Fixing a spelling error.">
+      <created>1373037774192</created>
+      <updated>1373037774192</updated>
+    </task>
+    <task id="LOCAL-00029" summary="A devious solution to my problem :D">
+      <created>1373038135438</created>
+      <updated>1373038135438</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Adding the project files for portability. At least I think so anyway.">
+      <created>1373272382195</created>
+      <updated>1373272382195</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Making a UtilsTest so that I can make the positionOfNextAFromBInC method safely.">
+      <created>1373273281108</created>
+      <updated>1373273281108</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Making Utils abstract and updating the tests accordingly.">
+      <created>1373273478849</created>
+      <updated>1373273478849</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Should've been using the documentBuilder and the Node stuff the whole time... I s-s-s-s-suck. Restart mk III.">
+      <created>1373279150268</created>
+      <updated>1373279150268</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Cleaning up and putting more things in ParserUtils. (renamed from StringUtils which was a retarded name)">
+      <created>1373282159796</created>
+      <updated>1373282159796</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Adding the files from the correct bit. Wasted time writing formatter and parser but now have both from libraries. All is well now. Might have to do some Exception handling later.">
+      <created>1373380384408</created>
+      <updated>1373380384408</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Removing warning. I hate those things.">
+      <created>1373380431421</created>
+      <updated>1373380431421</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Removing the Utils file. The whole thing in 1 class... and before I had 6.&#10;-_________________-">
+      <created>1373380631775</created>
+      <updated>1373380631775</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Updating the tests">
+      <created>1373381363257</created>
+      <updated>1373381363257</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Reorg">
+      <created>1373388318506</created>
+      <updated>1373388318506</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Reorg">
+      <created>1373388402249</created>
+      <updated>1373388402249</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Removing the Utils abstract class">
+      <created>1373444928372</created>
+      <updated>1373444928372</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Committing working version before doing crazy things.">
+      <created>1373445732967</created>
+      <updated>1373445732967</updated>
+    </task>
+    <task id="LOCAL-00043" summary="removed unnecessary context objects">
+      <created>1373446603091</created>
+      <updated>1373446603091</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Removing pointless things that caused warnings.">
+      <created>1373446675235</created>
+      <updated>1373446675235</updated>
+    </task>
+    <task id="LOCAL-00045" summary="restructure">
+      <created>1373446960390</created>
+      <updated>1373446960390</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Updating from the frontline version on the computer at Caplin.">
+      <created>1373532700848</created>
+      <updated>1373532700848</updated>
+    </task>
+    <task id="LOCAL-00047" summary="working version. I believe it to be finished.">
+      <created>1373538317031</created>
+      <updated>1373538317031</updated>
+    </task>
+    <task id="LOCAL-00048" summary="wtf perforce.">
+      <created>1373539803474</created>
+      <updated>1373539803474</updated>
+    </task>
+    <task id="LOCAL-00049" summary="p4 fixed. now to try and make a jar. this WILL fail. so I WILL see this commit message again. hi me.">
+      <created>1373546957409</created>
+      <updated>1373546957409</updated>
+    </task>
+    <task id="LOCAL-00050" summary="adding things">
+      <created>1373547106366</created>
+      <updated>1373547106366</updated>
+    </task>
+    <task id="LOCAL-00051" summary="removing things">
+      <created>1373556883279</created>
+      <updated>1373556883279</updated>
+    </task>
+    <task id="LOCAL-00052" summary="adding things">
+      <created>1373556921219</created>
+      <updated>1373556921219</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="60" y="-8" width="1868" height="1096" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.399361" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32800853" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20487265" sideWeight="0.67199147" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47603834" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32837406" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995749" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -451,11 +1031,19 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+<<<<<<< HEAD
     <option name="LAST_COMMIT_MESSAGE" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+=======
+    <option name="LAST_COMMIT_MESSAGE" value="removing warnings" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
     <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
     <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
@@ -465,6 +1053,7 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+<<<<<<< HEAD
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -473,6 +1062,145 @@
     <entry file="file://$PROJECT_DIR$/src/VelocityXMLFormatter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="19" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.61433446">
+=======
+    <MESSAGE value="Solved the problem with there being a space between the value section of an attribute of the XML tag." />
+    <MESSAGE value="Fixing a spelling error." />
+    <MESSAGE value="A devious solution to my problem :D" />
+    <MESSAGE value="Adding the project files for portability. At least I think so anyway." />
+    <MESSAGE value="Making a UtilsTest so that I can make the positionOfNextAFromBInC method safely." />
+    <MESSAGE value="Making Utils abstract and updating the tests accordingly." />
+    <MESSAGE value="Should've been using the documentBuilder and the Node stuff the whole time... I s-s-s-s-suck. Restart mk III." />
+    <MESSAGE value="Cleaning up and putting more things in ParserUtils. (renamed from StringUtils which was a retarded name)" />
+    <MESSAGE value="Adding the files from the correct bit. Wasted time writing formatter and parser but now have both from libraries. All is well now. Might have to do some Exception handling later." />
+    <MESSAGE value="Removing warning. I hate those things." />
+    <MESSAGE value="Removing the Utils file. The whole thing in 1 class... and before I had 6.&#10;-_________________-" />
+    <MESSAGE value="Updating the tests" />
+    <MESSAGE value="Reorg" />
+    <MESSAGE value="Removing the Utils abstract class" />
+    <MESSAGE value="Committing working version before doing crazy things." />
+    <MESSAGE value="removed unnecessary context objects" />
+    <MESSAGE value="Removing pointless things that caused warnings." />
+    <MESSAGE value="restructure" />
+    <MESSAGE value="Updating from the frontline version on the computer at Caplin." />
+    <MESSAGE value="working version. I believe it to be finished." />
+    <MESSAGE value="wtf perforce." />
+    <MESSAGE value="p4 fixed. now to try and make a jar. this WILL fail. so I WILL see this commit message again. hi me." />
+    <MESSAGE value="removing things" />
+    <MESSAGE value="adding things" />
+    <MESSAGE value="removing warnings" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="XMLtoJavaDocConverter" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="XMLtoJavaDocConverter" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/caplin/ConfigDocTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/caplin/ConfigDoc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="13" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/caplin/ConfigDoc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/caplin/ConfigDocTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="13" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XMLtoHTMLConverter.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="34" selection-start="1037" selection-end="1037" vertical-scroll-proportion="0.52135813" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/page.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="7" selection-start="121" selection-end="121" vertical-scroll-proportion="0.16757941" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/acceptableValues.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/caplin/ConfigDocTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="5" selection-start="1888" selection-end="1888" vertical-scroll-proportion="1.3134658">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/caplin/ConfigDoc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="39" selection-start="575" selection-end="575" vertical-scroll-proportion="0.65665233">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="44" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/inputs/gInput.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="782" column="32" selection-start="36281" selection-end="36281" vertical-scroll-proportion="0.50222224">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
           <folding />
         </state>
       </provider>
@@ -483,6 +1211,10 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+<<<<<<< HEAD
+=======
+          <last-edited>XMLtoHTMLConverter:jar</last-edited>
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -534,12 +1266,16 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+<<<<<<< HEAD
                 <option value="0.5" />
+=======
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
               </list>
             </option>
           </splitter-proportions>
         </settings>
       </state>
+<<<<<<< HEAD
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.7</last-edited>
@@ -547,14 +1283,28 @@
             <option name="proportions">
               <list>
                 <option value="0.20000006" />
+=======
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>libs</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
               </list>
             </option>
           </splitter-proportions>
         </settings>
       </state>
+<<<<<<< HEAD
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
           <last-edited>velocity-1.7</last-edited>
+=======
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+>>>>>>> 72c61c3a00388b3ef6e57edab6a27c4df302e683
           <splitter-proportions>
             <option name="proportions">
               <list>

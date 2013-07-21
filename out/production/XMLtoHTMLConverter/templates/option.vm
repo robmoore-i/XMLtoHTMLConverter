@@ -1,0 +1,43 @@
+$description
+<table border="1">
+<tr>
+<td>name</td><td>$name</td>
+</tr>
+#if( $type )
+<tr>
+<td>type</td><td>$type</td>
+</tr>
+#end
+#if( $default )
+<tr>
+<td>default</td><td>$default</td>
+</tr>
+#end
+#if( $deprecated )
+<tr>
+<td>deprecated</td><td>$deprecated</td>
+</tr>
+#end
+#if( $java )
+<tr>
+<td>java</td><td>$java</td>
+</tr>
+#end
+#if( $min )
+<tr>
+<td>min</td><td>$min</td>
+</tr>
+#end
+#if( $max )
+<tr>
+<td>max</td><td>$max</td>
+</tr>
+#end
+#set( $name = false )
+#set( $type = false )
+#set( $default = false )
+#set( $deprecated = false )
+#set( $java = false )
+#set( $min = false )
+#set( $max = false )
+</table>

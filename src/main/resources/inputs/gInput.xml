@@ -1,0 +1,1304 @@
+<DSDK>
+    <page name="Name Mapping">
+        <top-description>
+            <![CDATA[
+A DataSource application can be configured to map its internal namespace to a different external namespace. This can either be used to simply make it a valid object name for an external source, or to create a complex directory structure of objects.
+ 
+ A valid pattern contains either 0 or 1 * characters, where a * represents 0 or more characters to match, much like a filename pattern match.
+]]>
+        </top-description>
+        <options>
+            <option name="add-pattern" type="Function">
+                <option-description>
+                    <![CDATA[
+Add a name mapping pattern
+ 
+ <b>Examples:</b>
+ \verbatim
+ add-pattern *.FX /FX/*
+ add-pattern MSFT* /Microsoft/*
+ add-pattern * /*
+ \endverbatim
+]]>
+                </option-description>
+            </option>
+        </options>
+    </page>
+    <page name="Latency Chains">
+        <top-description>
+            <![CDATA[
+The following options are to setup this DataSource component to
+ add latency information to each update. For this to work the update
+ must already have an initial timestamp in milliseconds on a particular
+ field. If configured latency information will be added to two other
+ fields, describing the time elapsed since the initial timestamp. Each
+ entry has a corresponding event entry.
+ 
+ For example:
+ 
+ <table border=1>
+ <tr><td>Field</td><td>Value</td></tr>
+ <tr><td>LTY_INIT_TS</td><td>1125062541880</td></tr>
+ <tr><td>LTY_LIST_EVENT</td><td>datasrc1_E,datasrc1_X,transformer1_E,transformer1_X,rttpd1_E,rttpd1_X</td></tr>
+ <tr><td>LTY_LIST_TS</td><td>0,1,3,4,5,8</td></tr>
+ </table>
+ 
+ The comma seperated list of deltas correspond to the event names in
+ the list of events. Each value represents the milliseconds since the
+ initial timestamp that the event occured. For each component there
+ should be a Enter (E) and an Exit (X) event. Note that in some cases
+ Liberator will not add an Exit event, such as when the message is a
+ cached value and the Exit time would be very large.
+ 
+ The above value break down to the following information:
+ 
+ <table border=1>
+ <tr><td>Event</td><td>Value</td><td>Meaning</td></tr>
+ <tr><td>datasrc1_E</td><td>0</td><td>Time elapsed between inital timestamp and entering datasrc1</td></tr>
+ <tr><td>datasrc1_X</td><td>1</td><td>Time elapsed between inital timestamp and exiting datasrc1</td></tr>
+ <tr><td>transformer1_E</td><td>3</td><td>Time elapsed between inital timestamp and entering transformer1</td></tr>
+ <tr><td>transformer1_X</td><td>4</td><td>Time elapsed between inital timestamp and exiting transformer1</td></tr>
+ <tr><td>rttpd1_E</td><td>5</td><td>Time elapsed between inital timestamp and entering rttpd1</td></tr>
+ <tr><td>rttpd1_X</td><td>8</td><td>Time elapsed between inital timestamp and exiting rttpd1</td></tr>
+ </table>
+]]>
+        </top-description>
+        <options>
+            <option name="latency-chain-enable" type="Boolean" default="FALSE" java="true">
+                <option-description>
+                    <![CDATA[ Enable Latency Chaining ]]>
+                </option-description>
+            </option>
+            <option name="latency-chain-name" type="String" default="\%a" java="true">
+                <option-description>
+                    <![CDATA[ Latency Chain Name used for event list field ]]>
+                </option-description>
+            </option>
+            <option name="latency-chain-init-ts-field" type="String" default="LTY_INIT_TS" java="true">
+                <option-description>
+                    <![CDATA[ Latency Chain Init Timestamp Field Name ]]>
+                </option-description>
+            </option>
+            <option name="latency-chain-list-event-field" type="String" default="LTY_LIST_EVENT" java="true">
+                <option-description>
+                    <![CDATA[ Latency Chain Event List Field Name ]]>
+                </option-description>
+            </option>
+            <option name="latency-chain-list-ts-field" type="String" default="LTY_LIST_TS" java="true">
+                <option-description>
+                    <![CDATA[ Latency Chain Timestamp List Field Name ]]>
+                </option-description>
+            </option>
+            <option name="latency-chain-base64-mode" type="Integer" default="0" java="true">
+                <acceptableValues>
+                    <enum name="never" value="0">
+                        <enum-description>Default - do not treat values as base64 encoded</enum-description>
+                    </enum>
+                    <enum name="decode" value="1">
+                        <enum-description>Decode latency chain fields before processing</enum-description>
+                    </enum>
+                    <enum name="detect" value="2">
+                        <enum-description>Decode latency chain fields if they are encoded</enum-description>
+                    </enum>
+                    <enum name="encode" value="4">
+                        <enum-description>Encode latency chain fields after processing</enum-description>
+                    </enum>
+                </acceptableValues>
+                <option-description>
+                    <![CDATA[
+This option defines how latency chain field values will be processed with respect to base64 encoding. The options can be ORed together, for example 'decode|encode' will decode the field values, add this components entries onto the end of the field values, then encode the final values.
+ 
+ Note that 'encode' will only base64 a value that has just been decoded, it will not encode values that arrived in plain text.
+]]>
+                </option-description>
+            </option>
+        </options>
+    </page>
+    <page name="SSL">
+        <top-description>
+            <![CDATA[
+The Secure Sockets Layer (SSL) is a commonly-used protocol for managing the
+ security of a message transmission on the Internet, and offers a greater level of
+ protection than standard HTTP transmission.
+ 
+ DataSource is capable of communicating with its peers over SSL, providing an
+ encrypted channel over which the data sources can publish their data.
+ 
+ \par Making an SSL Connection
+ 
+ SSL certificates can be configured at either or both client and server ends of the
+ channel - DataSource is said to be operating in server mode when requesting
+ information and in client mode when receiving information.
+ 
+ \par Server mode only configuration
+ 
+ To configure DataSource for SSL when in server mode, use the <tt>datasrc-sslport</tt>
+ option to select the network port to listen for SSL connections from DataSource
+ peers.
+ 
+ It is possible for DataSource to accept both SSL and non-SSL connections on
+ different ports. Non-SSL connections should be configured using the <tt>datasrc-port</tt> option.
+ 
+ \par Client mode only configuration
+ 
+ To configure DataSource for SSL when in client mode, use the ssl option in the \ref add-peer
+ entry for the DataSource peer that acts as server. 
+ 
+ <b>Note:</b> There is no failback to non-SSL operation should the SSL connection fail to be established.
+ 
+ \par Server and client mode configuration
+ 
+ To configure DataSource for SSL at both client and server ends of the channel, use
+ the <tt>start-ssl</tt> group. This group is needed in the configuration file of
+ both client and server applications.
+ 
+ \par Configuring hardware devices
+ 
+ OpenSSL has built-in support for cryptographic acceleration. In newer versions of
+ OpenSSL (versions of 0.9.6 that include the name engine in the version) an
+ application can get a reference to a specific representation, often a hardware device. These representations are referred to as Engines.
+ 
+ These following configuration options are set by editing the <tt>ssl-engine-id</tt> and
+ <tt>ssl-engine-flags</tt> configuration options.
+]]>
+        </top-description>
+        <options>
+            <group name="start-ssl">
+                <group-description>
+                    Configures the SSL connection when setting up DataSource to be both client and server ends of an SSL
+                    channel. \note Not all options listed in this group are appropriate for both server and client
+                    modes.
+                    <b>Format:</b>
+                    \verbatim start-ssl enable-server enable-client server-authmode [value] client-authmode [value]
+                    server-cert [value] client-cert [value] server-key [value] client-key [value] cipher [value] ssl2
+                    ssl3 CApath [value] CAfile [value] ssl-info end-ssl \endverbatim
+                </group-description>
+                <options>
+                    <option name="enable-server" type="Boolean" default="FALSE">
+                        <option-description>
+                            <![CDATA[ Enables server-side SSL. ]]>
+                        </option-description>
+                    </option>
+                    <option name="enable-client" type="Boolean" default="FALSE">
+                        <option-description>
+                            <![CDATA[ Enables client-side SSL. ]]>
+                        </option-description>
+                    </option>
+                    <option name="server-cert" type="String" default="server.pem">
+                        <option-description>
+                            <![CDATA[
+Filename of the location of the server-side certificate.
+]]>
+                        </option-description>
+                    </option>
+                    <option name="client-cert" type="String">
+                        <option-description>
+                            <![CDATA[
+Filename of the location of the client-side certificate.
+]]>
+                        </option-description>
+                    </option>
+                    <option name="server-key" type="String">
+                        <option-description>
+                            <![CDATA[
+Filename of the location of the server-side private key.
+]]>
+                        </option-description>
+                    </option>
+                    <option name="client-key" type="String">
+                        <option-description>
+                            <![CDATA[
+Filename of the location of the client-side private key.
+]]>
+                        </option-description>
+                    </option>
+                    <option name="client-authmode" type="Integer" default="0">
+                        <acceptableValues>
+                            <enum name="none" value="0">
+                                <enum-description>No identity verification is performed</enum-description>
+                            </enum>
+                            <enum name="peer" value="1">
+                                <enum-description>Verify the identity of the remote peer</enum-description>
+                            </enum>
+                            <enum name="needcert" value="3">
+                                <enum-description>
+                                    Fail if no peer certificate is supplied (server only)
+                                </enum-description>
+                            </enum>
+                            <enum name="once" value="5">
+                                <enum-description>Only verify peer certificate once (server only)</enum-description>
+                            </enum>
+                        </acceptableValues>
+                        <option-description>
+                            <![CDATA[
+\anchor authmode
+ 
+ The table describes the flags to be used for the <tt>client-authmod</tt> and 
+ <tt>server-authmod</tt> options within the \ref start-ssl group.
+ 
+ 
+ <table style="text-align: left; width: 100%;" border="1" cellspacing="2" cellpadding="2">
+ <tr>
+ <td style="vertical-align: top; font-weight: bold; text-align: left; background-color: rgb(51, 0, 51); color: rgb(255, 255, 255);">Name<br></td>
+ <td style="vertical-align: top; font-weight: bold; text-align: left; background-color: rgb(51, 0, 51); color: rgb(255, 255, 255);">Value<br></td>
+ <td style="vertical-align: top; font-weight: bold; text-align: left; background-color: rgb(51, 0, 51); color: rgb(255, 255, 255);">server-authmode
+ description<br></td>
+ <td style="vertical-align: top; font-weight: bold; text-align: left; background-color: rgb(51, 0, 51); color: rgb(255, 255, 255);">client-authmode
+ -description<br> </td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">SSL_VERIFY_NONE<br></td>
+ <td style="vertical-align: top; text-align: center;">0<br></td>
+ <td style="vertical-align: top;">DataSource will not send a client certificate request to the client, so the client will not send a certificate.</
+ td>
+ <td style="vertical-align: top;">If not using an anonymous cipher (disabled by default), DataSource will send a certificate which will be checked.
+ The handshake will be continued regardless of the verification result. </td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">SSL_VERIFY_PEER<br></td>
+ <td style="vertical-align: top; text-align: center;">1<br></td>
+ <td style="vertical-align: top;">DataSource sends a client certificate request to the client. The certificate returned (if any) is checked. If the
+ verification process fails, the TLS/SSL handshake is immediately terminated with an alert message containing the reason for the verification failure.
+ The behaviour can be controlled by the additional SSL_VERIFY_FAIL and SSL_VERIFY_CLIENT_ONCE flags.</td>
+ <td style="vertical-align: top;">The server certificate is verified. If the verification process fails, the TLS/SSL handshake is immediately terminated with an alert message containing the reason for the verification failure. If no server certificate is sent, because an anonymous cipher is used,
+ SSL_VERIFY_PEER is ignored.</td>
+ </tr> 
+ <tr>
+ <td style="vertical-align: top;">SSL_VERIFY_FAIL<br></td>
+ <td style="vertical-align: top; text-align: center;">2<br></td>
+ <td style="vertical-align: top;">If the client did not return a certificate, the TLS/SSL handshake is immediately terminated with a ''handshake fa
+ ilure'' alert. This flag must be used together with SSL_VERIFY_PEER.</td>
+ <td style="vertical-align: top;">Ignored.<br></td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">SSL_VERIFY_CLIENT_ONCE<br></td>
+ <td style="vertical-align: top; text-align: center;">4<br></td>
+ <td style="vertical-align: top;">Only request a client certificate on the initial TLS/SSL handshake. Do not ask for a client certificate again in 
+ case of a renegotiation. This flag must be used together with SSL_VERIFY_PEER.</td>
+ <td style="vertical-align: top;">Ignored.<br></td>
+ </tr>
+ </table>
+]]>
+                        </option-description>
+                    </option>
+                    <option name="server-authmode" type="Integer" default="0">
+                        <acceptableValues>
+                            <enum name="none" value="0">
+                                <enum-description>No identity verification is performed</enum-description>
+                            </enum>
+                            <enum name="peer" value="1">
+                                <enum-description>Verify the identity of the remote peer</enum-description>
+                            </enum>
+                            <enum name="needcert" value="3">
+                                <enum-description>
+                                    Fail if no peer certificate is supplied (server only)
+                                </enum-description>
+                            </enum>
+                            <enum name="once" value="5">
+                                <enum-description>Only verify peer certificate once (server only)</enum-description>
+                            </enum>
+                        </acceptableValues>
+                        <option-description>
+                            <![CDATA[
+Please see \ref authmode for details of the possible values of this option.
+]]>
+                        </option-description>
+                    </option>
+                    <option name="cipher" type="String">
+                        <option-description>
+                            <![CDATA[
+Sets the cipher to be used for the connection (usually defined on the client side).
+]]>
+                        </option-description>
+                    </option>
+                    <option name="ssl2" type="Boolean" default="FALSE">
+                        <option-description>
+                            <![CDATA[ Sets the SSL protocol level to SSL version 2. ]]>
+                        </option-description>
+                    </option>
+                    <option name="ssl3" type="Boolean" default="FALSE">
+                        <option-description>
+                            <![CDATA[ Sets the SSL protocol level to SSL version 3. ]]>
+                        </option-description>
+                    </option>
+                    <option name="tls1" type="Boolean" default="FALSE">
+                        <option-description>
+                            <![CDATA[ Sets the SSL protocol level to TLS1. ]]>
+                        </option-description>
+                    </option>
+                    <option name="CApath" type="String">
+                        <option-description>
+                            <![CDATA[
+Sets the directory name of the directory where the trusted certificates are held.
+]]>
+                        </option-description>
+                    </option>
+                    <option name="CAfile" type="String">
+                        <option-description>
+                            <![CDATA[
+Sets the filename of the file where all trusted certificates are held.
+]]>
+                        </option-description>
+                    </option>
+                    <option name="ssl-info" type="Boolean" default="FALSE">
+                        <option-description>
+                            <![CDATA[ Enables SSL connection negotiation debugging. ]]>
+                        </option-description>
+                    </option>
+                </options>
+            </group>
+            <option name="ssl-random-seed" type="Function">
+                <option-description>
+                    <![CDATA[
+Configures the seeding of the OpenSSL random number generator, which Caplin
+ Liberator uses for session IDs and HTTPS and DataSource SSL connections. 
+ 
+ The parameters for this option are:
+ 
+ <table style="text-align: left; width: 788px; height: 216px;" border="1" cellspacing="2" cellpadding="2">
+ <tr>
+ <td style="vertical-align: top; font-weight: bold; color: rgb(255, 255, 255); background-color: rgb(51, 0, 51);">Name<br></td>
+ <td style="vertical-align: top; font-weight: bold; color: rgb(255, 255, 255); background-color: rgb(51, 0, 51);">Description<br></td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">type<br></td>
+ <td style="vertical-align: top;">Type of random number generation. Must be one of the following:<br>
+ <br>
+ <span style="font-style: italic;">builtin</span> This takes no arguments and uses various system commands to produce random output.<br>
+ <span style="font-style: italic;">file</span> Uses the data in the file to seed the random number generator.<br>
+ <span style="font-style: italic;">exec</span> Uses the output of the command to seed the random number generator.<br>
+ </td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">arg1<br></td>
+ <td style="vertical-align: top;">If type is <span style="font-style: italic;">file</span>, this is a filename (relative to the root directory).<br
+ >
+ If type is <span style="font-style: italic;">exec,</span> this is a command (relative to the root directory)<br>
+ </td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">arg2<br></td>
+ <td style="vertical-align: top;">If type is <span style="font-style: italic;">file</span>, this specifies how many bytes of the file to use.<br>
+ If type if <span style="font-style: italic;">exec</span>, thisspecifies how many bytes of the output to use.<br>
+ </td>
+ </tr>
+ </table>
+ <b>Examples:</b>
+ \verbatim
+ ssl-random-seed builtin
+ ssl-random-seed file etc/randomdata
+ ssl-random-seed file etc/randomdata 1024
+ ssl-random-seed exec etc/random.sh
+ ssl-random-seed exec etc/random.sh 512
+ \endverbatim
+ 
+ \note On Linux OpenSSL is seeded by a hardware device so using ssl-randomseed may be unnecessary.
+]]>
+                </option-description>
+            </option>
+            <option name="ssl-passwordfile" type="String">
+                <option-description>
+                    <![CDATA[ SSL Pass Phrase Filename ]]>
+                </option-description>
+            </option>
+            <option name="ssl-engine-id" type="String">
+                <option-description>
+                    <![CDATA[
+This option configures the SSL hardware or software engine to support. The available
+ engines are listed in the table below:
+ 
+ <table style="text-align: center; width: 780px; height: 290px;" border="1" cellspacing="2" cellpadding="2">
+ <tr>
+ <td style="vertical-align: top; font-weight: bold; color: rgb(255, 255, 255); background-color: rgb(51, 0, 51);">ssl-engine-id option</td>
+ <td style="vertical-align: top; font-weight: bold; color: rgb(255, 255, 255); background-color: rgb(51, 0, 51);">Engine</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">openssl <br></td>
+ <td style="vertical-align: top;">The engine uses the normal built-in software functions (this is the default)</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">openbsd_dev_crypto </td>
+ <td style="vertical-align: top;">On OpenBSD, this engine will use the kernel level cryptography built into the OS.</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">aep</td>
+ <td style="vertical-align: top;">Uses the Aep acceleration hardware</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">atalla</td>
+ <td style="vertical-align: top;"> Uses the Compaq Atalla acceleration hardware</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">chil </td>
+ <td style="vertical-align: top;"> Uses the nCipher CHIL acceleration hardware</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">cswift</td>
+ <td style="vertical-align: top;">Uses the CryptoSwift acceleration hardware</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">nuron</td>
+ <td style="vertical-align: top;">Uses the Nuron acceleration hardware</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">ubsec</td>
+ <td style="vertical-align: top;">Uses the Broadcom uBSec acceleration hardware</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">sureware</td>
+ <td style="vertical-align: top;">Uses the SureWare acceleration hardware</td>
+ </tr>
+ </table>
+]]>
+                </option-description>
+            </option>
+            <option name="ssl-engine-flags" type="String" default="all">
+                <option-description>
+                    <![CDATA[
+This option affects the flags passed to the engine implementation.
+ 
+ The flags in the table below may be ORed together using the "|" operator to
+ represent multiple flags: for example "dsa|rsa" equates to using only DSA and
+ RSA operations
+ 
+ <table style="text-align: center;" border="1" cellspacing="2" cellpadding="2">
+ <tr>
+ <td style="vertical-align: top; font-weight: bold; color: rgb(255, 255, 255); background-color: rgb(51, 0, 51);">Flag</td>
+ <td style="vertical-align: top; font-weight: bold; color: rgb(255, 255, 255); background-color: rgb(51, 0, 51);">Description</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">dh</td>
+ <td style="vertical-align: top;">Limit engine usage to only DH operations</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">dsa</td>
+ <td style="vertical-align: top;">Limit engine usage to only DSA operations</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">rand</td>
+ <td style="vertical-align: top;">Limit engine usage to only random operations</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">rsa</td>
+ <td style="vertical-align: top;">Limit engine usage to only RSA operations</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">all</td>
+ <td style="vertical-align: top;">Allow OpenSSL to use any of the above implementations</td>
+ </tr>
+ </table>
+]]>
+                </option-description>
+            </option>
+            <option name="ssl-config-name" type="String">
+                <option-description>
+                    <![CDATA[
+The OpenSSL config name to load (default=system default)
+]]>
+                </option-description>
+            </option>
+        </options>
+    </page>
+    <page name="Active Cache">
+        <top-description>
+            <![CDATA[
+Active Cache enables a broadcast-style data feed to be turned into an active 
+ request-based one. This is done by caching all data in DataSource and handling 
+ requests for that data internally.
+ 
+ Active Cache allows a DataSource programmer to send data in a simple way instead 
+ of having to write a database or caching mechanism. Handling active requests and 
+ keeping track of what objects are being viewed is all handled by the DataSource library.
+ 
+ This feature is useful when one DataSource is feeding multiple DataSource peers and 
+ the peers are only interested in a small subset of the overall data.
+]]>
+        </top-description>
+        <options>
+            <option name="cache-add-exclude-pattern" type="String Array">
+                <option-description>
+                    <![CDATA[
+By default the DataSource Active cache will cache all data broadcast by the DataSource application. Under
+ certain circumstances this may not be desirable. As such, DataSource allows patterns to be specified which
+ should a subject match, it will then be cached. The <tt>cache-add-exclude-pattern</tt> is applied to
+ any <tt>cache-add-include-pattern</tt> directives to determine whether the symbol should be cached.
+ 
+ For example, given the following:
+ 
+ \verbatim
+ cache-add-include-pattern ^/L/
+ cache-add-exclude-pattern ^/L/A
+ \endverbatim
+ 
+ This configuration example will cache all symbols within the /L/ namespace, except those that begin
+ /L/A.
+]]>
+                </option-description>
+            </option>
+            <option name="cache-add-include-pattern" type="String Array">
+                <option-description>
+                    <![CDATA[
+By default the DataSource Active cache will cache all data broadcast by the DataSource application. Under
+ certain circumstances this may not be desirable. As such, DataSource allows patterns to be specified which
+ should a subject match, it will then be cached. The <tt>cache-add-exclude-pattern</tt> is applied to
+ any <tt>cache-add-include-pattern</tt> directives to determine whether the symbol should be cached.
+ 
+ For example, given the following:
+ 
+ \verbatim
+ cache-add-include-pattern ^/L/
+ cache-add-exclude-pattern ^/L/A
+ \endverbatim
+ 
+ This configuration example will cache all symbols within the /L/ namespace, except those that begin
+ /L/A.
+]]>
+                </option-description>
+            </option>
+            <option name="cache-add-object" type="String Array">
+                <option-description>
+                    <![CDATA[ Configure an object to be in the active cache ]]>
+                </option-description>
+            </option>
+            <option name="cache-hash-size" type="Integer" default="1024">
+                <option-description>
+                    <![CDATA[ Size of Object Cache ]]>
+                </option-description>
+            </option>
+            <option name="cache-objects" type="Boolean" default="FALSE">
+                <option-description>
+                    <![CDATA[ Turn on Active Cache ]]>
+                </option-description>
+            </option>
+            <option name="add-cache-purge" type="Function">
+                <option-description>
+                    <![CDATA[
+The <tt>add-cache-purge</tt> allows the contents to be purged on a periodic basis, for example when an update
+ for a symbol has not be received for a period of time. The option has the following format:
+ 
+ \verbatim
+ add-purge [regex] [TimeToPurge] [Age]
+ \endverbatim
+ 
+ Where the subject to be purged should match the regular expression <tt>regex</tt>. <tt>[TimeToPurge]</tt> is the
+ time of the day (minutes past midnight) to perform the purge and <tt>Age</tt> is the time in <i>days</i> that the
+ last update for the symbol was received.
+]]>
+                </option-description>
+            </option>
+        </options>
+    </page>
+    <page name="Data Services">
+        <top-description>
+            <![CDATA[
+Data Services are a new feature in
+ the 4.0 Caplin platform and offer improved source mapping when compared to
+ previous versions with the following key features:
+ 
+ 
+ \li More intuitive configuraiton
+ \li More clearly defined handling of objects receiving data from multiple sources
+ at the same time
+ \li Ability to define both failover and round-robin style mappings.
+ 
+ A Source Mapping definition is called a Service. A service comprises a name, 
+ one or more subject patterns to match and one or more source groups.
+ 
+ \par Service name
+ 
+ This is an indentifier which can be used in status messages. RTTP objects 
+ have a field called SID which is the service name.
+ 
+ <b>Note:</b>When picking a service for an object, the first defined match takes priority. As such you should ensure that each object is associated with one and only one service.
+ 
+ \par The subject patterns
+ 
+ These are regular expression strings to accept or deny for this service. A service will allow multiple patterns including patterns to deny. Exclude patterns can help to define the namespace used.
+ 
+ <b>Note:</b> When checking pattern matches within a service definition, the first match takes priority whether it is an include or an exclude.
+ 
+ \par The source groups
+ 
+ The main part of the service definition is the source groups. This is one or more sets of sources, plus certain attributes which define the behaviour of the group. In most cases only a single group is defined. When multiple groups are defined for a service it means that a request will attempt to get the object from a source from each group. Multiple groups allow an object to have different sets of fields coming from different sources, for example.
+ 
+ \par Priorities
+ 
+ Priorities are defined within each source group and are taken in the order in which they are defined. Multiple labels can be defined within each priority. Within a priority, the peer with the lowest number of subscriptions will be used.
+ 
+ \par Timeouts
+ 
+ There are various timeouts associated with Data Services. By default when an object is requested if after 10 seconds there has been no response, the request will be cancelled and the user informed. This is the <tt>service-request-timeout</tt> and applies to the whole object request. It is also possible to timeout requests to individual sources, to allow the request to move on to another source. This is the <tt>source-request-timeout</tt>, which by default is not turned on. The Source timeout is only useful when using a priority group with multiple sources within it as it allows the system to try more than one source before giving up. All these timeouts are only relevant when a source does not respond to a request, when the timeout occurs a discard message is sent to the source so it is aware that the request is cancelled.
+ 
+ \par Default Behaviour
+ 
+ If no data-service is defined, then the application will act as if the following
+ was defined:
+ 
+ \verbatim
+ add-data-service
+ service-name default
+ include-pattern ^/
+ add-source-group
+ required false
+ add-priority
+ label source1
+ end-priority
+ end-source-group
+ add-source-group
+ required false
+ add-priority
+ label source2
+ end-priority
+ end-source-group
+ .
+ .
+ add-source-group
+ required false
+ add-priority
+ label sourceN
+ end-priority
+ end-source-group
+ end-data-service
+ \endverbatim
+ 
+ This means a request will be sent to all active Data Sources at once.
+ 
+ When using the DataSource SDK to request objects programmatically,
+ the Data Services system will prevent requests going to any peer that
+ has already been sent a request. It also handles which peers requests
+ go to rather than the programmer explicitly specifying the peers.
+ 
+ 
+ \par Conversion
+ 
+ Pre-version 4.0 source mapping should be converted to data services in the following manner:
+ 
+ All peers should have a <tt>label</tt> defined in the <tt>add-peer</tt> configuration section, for
+ these example conversion, the <tt>label</tt> is 'src' appended with the the <tt>remote-id</tt>
+ 
+ <b>add-source-mapping /A/* 1 should be converted to:</b>
+ 
+ \verbatim
+ include-pattern ^/A/
+ add-source-group
+ required true
+ add-priority
+ label src1
+ end-priority
+ end-source-group
+ \endverbatim
+ 
+ <b>add-source-mapping /A/* 1,2 should be converted to:</b>
+ 
+ \verbatim
+ include-pattern ^/A/
+ add-source-group
+ required true
+ add-priority
+ label src1
+ label src2
+ end-priority
+ end-source-group
+ \endverbatim
+ 
+ <b>add-source-mapping /A/* 1 2 should be converted to:</b>
+ 
+ \verbatim
+ include-pattern ^/A/
+ add-source-group
+ required true
+ add-priority
+ label src1
+ end-priority
+ end-source-group
+ add-source-group
+ required true
+ add-priority
+ label src2
+ end-priority
+ end-source-group
+ \endverbatim
+ 
+ <b>add-source-mapping /A/* 1,2 3,4 should be converted to:</b>
+ 
+ \verbatim
+ include-pattern ^/A/
+ add-source-group
+ required true
+ add-priority
+ label src1
+ label src2
+ end-priority
+ end-source-group
+ add-source-group
+ required true
+ add-priority
+ label src3
+ label src4
+ end-priority
+ end-source-group
+ \endverbatim
+]]>
+        </top-description>
+        <options>
+            <option name="service-request-timeout" type="Floating Point Value" default="10.000000">
+                <option-description>
+                    <![CDATA[ Global request timeout for all services ]]>
+                </option-description>
+            </option>
+            <option name="source-request-timeout" type="Floating Point Value" default="-1.000000">
+                <option-description>
+                    <![CDATA[ Global request timeout for all sources ]]>
+                </option-description>
+            </option>
+            <group name="add-data-service">
+                <group-description>
+                    Starts the definition of data service.
+                    <b>Format:</b>
+                    \verbatim add-data-service service-name [value] request-timeout [value] exclude-pattern [value]
+                    include-pattern [value] add-source-group required [boolean] retry-time [value] add-priority label
+                    [value] end-priority end-source-group end-data-service \endverbatim
+                    <b>Example:</b>
+                    \verbatim add-data-service service-name FX exclude-pattern ^/I/X include-pattern ^/I/
+                    include-pattern ^/B/ request-timeout 20 add-source-group required true retry-time 45 add-priority
+                    label sourceA end-priority add-priority label sourceB label sourceC end-priority end-source-group
+                    add-source-group required false add-priority label source1 label source2 end-priority
+                    end-source-group end-data-service \endverbatim In this example, the service FX is defined which
+                    matches the patterns ^/I/ and ^/B/ but not the symbols ^/B/. There are two service groups, one
+                    providing required data and another providing optional data. For the required group, there are two
+                    priorities defined, requests will be preferentially sent to sourceA, however should it not be
+                    available then sourceB and sourceC will be asked in a round-robin fashion. For the non-required
+                    group, two sources are defined, requests will be sent to source1 and source2 in a round-robin
+                    fashion.
+                </group-description>
+                <options>
+                    <option name="service-name" type="String">
+                        <option-description>
+                            <![CDATA[ Name of the service group ]]>
+                        </option-description>
+                    </option>
+                    <option name="service-type" type="Integer" default="3">
+                        <acceptableValues>
+                            <enum name="active" value="1">
+                                <enum-description></enum-description>
+                            </enum>
+                            <enum name="broadcast" value="2">
+                                <enum-description></enum-description>
+                            </enum>
+                        </acceptableValues>
+                        <option-description>
+                            <![CDATA[ Type of the service group ]]>
+                        </option-description>
+                    </option>
+                    <option name="request-timeout" type="Floating Point Value" default="-1.000000">
+                        <option-description>
+                            <![CDATA[
+This option configures the timeout for all requests for this service. Should no response
+ be received from peers within this time, the object will be assumed to be not available.
+ 
+ The default value of -1 means that requests will never timeout.
+]]>
+                        </option-description>
+                    </option>
+                    <option name="discard-timeout" type="Floating Point Value" default="-1.000000">
+                        <option-description>
+                            <![CDATA[ Timeout for all discards for this service ]]>
+                        </option-description>
+                    </option>
+                    <option name="exclude-pattern" type="Function">
+                        <option-description>
+                            <![CDATA[ Patterns to exclude ]]>
+                        </option-description>
+                    </option>
+                    <option name="include-pattern" type="Function">
+                        <option-description>
+                            <![CDATA[ Patterns to include ]]>
+                        </option-description>
+                    </option>
+                    <option name="required-state" type="Integer" default="0">
+                        <acceptableValues>
+                            <enum name="down" value="0">
+                                <enum-description></enum-description>
+                            </enum>
+                            <enum name="optional" value="0">
+                                <enum-description></enum-description>
+                            </enum>
+                            <enum name="limited" value="1">
+                                <enum-description></enum-description>
+                            </enum>
+                            <enum name="ok" value="2">
+                                <enum-description></enum-description>
+                            </enum>
+                            <enum name="up" value="2">
+                                <enum-description></enum-description>
+                            </enum>
+                        </acceptableValues>
+                        <option-description>
+                            <![CDATA[ Required state for this service ]]>
+                        </option-description>
+                    </option>
+                    <option name="cache-contrib" type="Boolean" default="FALSE">
+                        <option-description>
+                            <![CDATA[ Whether contrib symbols from this group are cached ]]>
+                        </option-description>
+                    </option>
+                    <option name="nodata-ignore-request-timeout" type="Boolean" default="FALSE">
+                        <option-description>
+                            <![CDATA[
+This option configures the service so that all nodatas received are propagated to the user code 
+ and any outstanding requests for the nodata subject are discarded. 
+ 
+ The default value is for the legacy behaviour.
+]]>
+                        </option-description>
+                    </option>
+                </options>
+            </group>
+            <group name="add-source-group">
+                <group-description>Add a source group</group-description>
+                <options>
+                    <option name="required" type="Boolean" default="FALSE">
+                        <option-description>
+                            <![CDATA[ Whether this source group is required ]]>
+                        </option-description>
+                    </option>
+                    <option name="retry-time" type="Floating Point Value" default="30.000000" min="1.000000">
+                        <option-description>
+                            <![CDATA[
+Time to retry when we've looped through all priorities
+]]>
+                        </option-description>
+                    </option>
+                </options>
+            </group>
+            <group name="add-priority">
+                <group-description>Start a priority group</group-description>
+                <options>
+                    <option name="remote-label" type="String Array">
+                        <option-description>
+                            <![CDATA[ Peer labels ]]>
+                        </option-description>
+                    </option>
+                    <option name="label" type="String Array">
+                        <option-description>
+                            <![CDATA[ Peer labels ]]>
+                        </option-description>
+                    </option>
+                </options>
+            </group>
+            <option name="datasrc-default-obj-hash-size" type="Integer" default="16384">
+                <option-description>
+                    <![CDATA[
+Default number of entries in the active object hashtable. This size can be overridden
+ by putting a value in the <tt>obj-hash-size</tt> option of the \ref add-peer entry.
+]]>
+                </option-description>
+            </option>
+            <option name="cleanup-stale-timeout" type="Floating Point Value" default="-1.000000">
+                <option-description>
+                    <![CDATA[
+Default delay in seconds before cleaning STALE objects from the cache
+]]>
+                </option-description>
+            </option>
+            <option name="broadcast-cleanup-time" type="Integer" default="-1">
+                <option-description>
+                    <![CDATA[
+Time in minutes past midnight to clean up broadcast objects
+]]>
+                </option-description>
+            </option>
+            <option name="broadcast-cleanup-period" type="Integer" default="1440">
+                <option-description>
+                    <![CDATA[ How often to cleanup broadcast objects ]]>
+                </option-description>
+            </option>
+            <option name="broadcast-cleanup-age" type="Integer" default="-1">
+                <option-description>
+                    <![CDATA[ How old broadcast objects need to be for cleanup ]]>
+                </option-description>
+            </option>
+        </options>
+    </page>
+    <page name="Fields">
+        <top-description>
+            <![CDATA[
+A set of fields makes up a data object or an update to an object. Standard record
+ objects are made up of fields, whereas other types of data may store data in a
+ different way.
+ 
+ <b>Note:</b>While fields can be represented by either a field number or a field name,
+ DataSource uses field numbers to send data updates. However, if field names are
+ configured it is possible to use the names by utilising the ds_add_record set of
+ functions instead of the ds_add_data functions (see \ref records and \ref data).
+]]>
+        </top-description>
+        <options>
+            <option name="add-field" type="Function" java="true">
+                <option-description>
+                    <![CDATA[
+Defines a field number/name mapping.
+ 
+ <b>Format:</b>
+ \verbatim
+ add-field FieldName FieldNumber FieldFlags [FieldFlagsData]
+ \endverbatim
+ <table style="text-align: center;" border="1" cellspacing="2" cellpadding="2">
+ <tr>
+ <td style="vertical-align: top; font-weight: bold; color: rgb(255
+]]>
+                    <![CDATA[
+, 255, 255); background-color: rgb(51, 0, 51);">Name</td>
+ <td style="vertical-align: top; font-weight: bold; color: rgb(255, 255, 255); background-color: rgb(51, 0, 51);">Type</td>
+ <td style="vertical-align: top; font-weight: bold; color: rgb(255, 255, 255); background-color: rgb(51, 0, 51);">Default</td>
+ <td style="vertical-align: top; font-weight: bold; color: rgb(255, 255, 255); background-color: rgb(51, 0, 51);">Field Format</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">FieldName</td>
+ <td style="vertical-align: top;">string</td>
+ <td style="vertical-align: top;">[no default]</td>
+ <td style="vertical-align: top;">The name of the field</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">FieldNumber</td>
+ <td style="vertical-align: top;">integer</td>
+ <td style="vertical-align: top;">[no default]</td>
+ <td style="vertical-align: top;">The number of the field. This must be in the range -65535 to 65535.</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">FieldFlags</td>
+ <td style="vertical-align: top;">integer</td>
+ <td style="vertical-align: top;">0</td>
+ <td style="vertical-align: top;">The flags passed by the field.</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">FieldFlagsData</td>
+ <td style="vertical-align: top;">integer</td>
+ <td style="vertical-align: top;">-1</td>
+ <td style="vertical-align: top;">Additional data (specifies the number of decimal places the field uses when FieldFlags is set to 256 or the type of field when FieldFlags is set to 512).</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">FieldFormat</td>
+ <td style="vertical-align: top;">integer</td>
+ <td style="vertical-align: top;">[none]</td>
+ <td style="vertical-align: top;">Defines the formatting of values added to this field.</td>
+ </tr>
+ </table>
+ 
+ \note There is no need to add fields unless the application is using text-based field names.
+ 
+ The table below shows the acceptable values of <i>FieldFlags</i> and the corresponding
+ meanings of <i>FieldFlagsData</i> and <i>FieldFormat</i>. <i>FieldFlags</i> can be represent by either
+ a text string or an integer.
+ 
+ These strings may be ORed together using the "|" operator to represent multiple
+ flags: for example "type3|dp" means a field is type3 and uses the decimal point
+ precision mode.
+ 
+ <table style="text-align: center;" border="1" cellspacing="2" cellpadding="2">
+ <tr>
+ <td style="vertical-align: top; font-weight: bold; color: rgb(255, 255, 255); background-color: rgb(51, 0, 51);">FieldFlags (text)</td>
+ <td style="vertical-align: top; font-weight: bold; color: rgb(255, 255, 255); background-color: rgb(51, 0, 51);">FieldFlags (integer)</td>
+ <td style="vertical-align: top; font-weight: bold; color: rgb(255, 255, 255); background-color: rgb(51, 0, 51);">Description</td>
+ <td style="vertical-align: top; font-weight: bold; color: rgb(255, 255, 255); background-color: rgb(51, 0, 51);">FieldFlagsData</td>
+ <td style="vertical-align: top; font-weight: bold; color: rgb(255, 255, 255); background-color: rgb(51, 0, 51);">FieldFormat</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">type2<br>index</td>
+ <td style="vertical-align: top;">1</td>
+ <td style="vertical-align: top;">Identifies the field as a Type 2 index</td>
+ <td style="vertical-align: top;">Not Used</td>
+ <td style="vertical-align: top;">Not Used</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">type2</td>
+ <td style="vertical-align: top;">2</td>
+ <td style="vertical-align: top;">Identifies the field as a Type 2 field</td>
+ <td style="vertical-align: top;">Not Used</td>
+ <td style="vertical-align: top;">Not Used</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">type3</td>
+ <td style="vertical-align: top;">4</td>
+ <td style="vertical-align: top;">Identifies the field as a Type 3 field</td>
+ <td style="vertical-align: top;">Not Used</td>
+ <td style="vertical-align: top;">Not Used</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">dp<br>decimal_precision</td>
+ <td style="vertical-align: top;">256</td>
+ <td style="vertical-align: top;">Decimal point precision mode</td>
+ <td style="vertical-align: top;">Number of decimal places</td>
+ <td style="vertical-align: top;">Not Used</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">fmt<br>format</td>
+ <td style="vertical-align: top;">512</td>
+ <td style="vertical-align: top;">Format mode</td>
+ <td style="vertical-align: top;">Field type</td>
+ <td style="vertical-align: top;">Format string (eg "%%.12g")</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">fmt_id<br>format_id/td>
+ <td style="vertical-align: top;">1024</td>
+ <td style="vertical-align: top;">Format set mode</td>
+ <td style="vertical-align: top;">Not Used</td>
+ <td style="vertical-align: top;">Name of format set as specified using \ref add-field-format</td>
+ </tr>
+ </table>
+ 
+ The table below lists the field types that can be used in <i>FieldsFlagsData</i> when in Format
+ mode (FieldFlags = 512)
+ 
+ <table style="text-align: center;" border="1" cellspacing="2" cellpadding="2">
+ <tr>
+ <td style="vertical-align: top; font-weight: bold; color: rgb(255, 255, 255); background-color: rgb(51, 0, 51);">Type</td>
+ <td style="vertical-align: top; font-weight: bold; color: rgb(255, 255, 255); background-color: rgb(51, 0, 51);">Description</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">1</td>
+ <td style="vertical-align: top;">32 bit float</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">2</td>
+ <td style="vertical-align: top;">64 bit float</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">3</td>
+ <td style="vertical-align: top;">8 bit integer</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">4</td>
+ <td style="vertical-align: top;">16 bit integer</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">5</td>
+ <td style="vertical-align: top;">32 bit integer</td>
+ </tr>
+ <tr>
+ <td style="vertical-align: top;">6</td>
+ <td style="vertical-align: top;">64 bit integer</td>
+ </tr>
+ </table>
+]]>
+                </option-description>
+            </option>
+            <option name="fields-float32-fmt" type="String" default="\%.8g" java="true">
+                <option-description>
+                    <![CDATA[ Format for float32 types ]]>
+                </option-description>
+            </option>
+            <option name="fields-float64-fmt" type="String" default="\%.12g" java="true">
+                <option-description>
+                    <![CDATA[ Format for float64 types ]]>
+                </option-description>
+            </option>
+            <option name="fields-int8-fmt" type="String" default="\%hhd" java="true">
+                <option-description>
+                    <![CDATA[ Format for int8 types ]]>
+                </option-description>
+            </option>
+            <option name="fields-int16-fmt" type="String" default="\%hd" java="true">
+                <option-description>
+                    <![CDATA[ Format for int16 types ]]>
+                </option-description>
+            </option>
+            <option name="fields-int32-fmt" type="String" default="\%ld" java="true">
+                <option-description>
+                    <![CDATA[ Format for int32 types ]]>
+                </option-description>
+            </option>
+            <option name="fields-int64-fmt" type="String" default="\%lld" java="true">
+                <option-description>
+                    <![CDATA[ Format for int64 types ]]>
+                </option-description>
+            </option>
+            <group name="add-field-format">
+                <group-description>
+                    This option defines sets of format strings which can be used by the add-field option. The formats
+                    defined will only work with the functions details in \ref records.
+                    <b>Format:</b>
+                    \verbatim add-format name [value] float32-fmt [value] float64-fmt [value] int8-fmt [value] int16-fmt
+                    [value] int32-fmt [value] int64-fmt [value] end format \endverbatim
+                </group-description>
+                <options>
+                    <option name="name" type="String" java="true">
+                        <option-description>
+                            <![CDATA[ Name of this format set ]]>
+                        </option-description>
+                    </option>
+                    <option name="float32-fmt" type="String" java="true">
+                        <option-description>
+                            <![CDATA[ Format string for 32 bit floats ]]>
+                        </option-description>
+                    </option>
+                    <option name="float64-fmt" type="String" java="true">
+                        <option-description>
+                            <![CDATA[ Format string for 64 bit floats ]]>
+                        </option-description>
+                    </option>
+                    <option name="int8-fmt" type="String" java="true">
+                        <option-description>
+                            <![CDATA[ Format string for 8 bit integers ]]>
+                        </option-description>
+                    </option>
+                    <option name="int16-fmt" type="String" java="true">
+                        <option-description>
+                            <![CDATA[ Format string for 16 bit integers ]]>
+                        </option-description>
+                    </option>
+                    <option name="int32-fmt" type="String" java="true">
+                        <option-description>
+                            <![CDATA[ Format string for 32 bit integers ]]>
+                        </option-description>
+                    </option>
+                    <option name="int64-fmt" type="String" java="true">
+                        <option-description>
+                            <![CDATA[ Format string for 64 bit integers ]]>
+                        </option-description>
+                    </option>
+                </options>
+            </group>
+            <option name="numeric-locale" type="String" java="true">
+                <option-description>
+                    <![CDATA[ Locale for numeric field formatting ]]>
+                </option-description>
+            </option>
+        </options>
+    </page>
+    <page name="Logging">
+        <top-description>
+            <![CDATA[
+This section of the configuration file configures DataSource's log files. The 
+ log files keep a record of all data and to what destinations the data was sent.
+]]>
+        </top-description>
+        <options>
+            <option name="log-level" type="String" default="INFO" java="true">
+                <option-description>
+                    <![CDATA[ Default logging level ]]>
+                </option-description>
+            </option>
+            <option name="log-monitor-level" type="String" default="CRIT">
+                <option-description>
+                    <![CDATA[
+Default logging level to send log events to monitoring
+]]>
+                </option-description>
+            </option>
+            <option name="log-dir" type="String" default="\%r/var" java="true">
+                <option-description>
+                    <![CDATA[
+Default directory in which to store log files. %%r is replaced by \ref application-root, %%a will be replaced by \ref application-name.
+]]>
+                </option-description>
+            </option>
+            <option name="log-maxsize" type="Integer" default="0" java="true">
+                <option-description>
+                    <![CDATA[
+Maximum log file size in bytes. The log files will be cycled if they exceed the size
+ specified here; therefore a value of 0 means log files will cycle every time they are
+ checked.
+]]>
+                </option-description>
+            </option>
+            <option name="log-cycle-time" type="Integer" default="240" java="true">
+                <option-description>
+                    <![CDATA[
+Time at which logs will cycle, in minutes from midnight.
+]]>
+                </option-description>
+            </option>
+            <option name="log-cycle-period" type="Integer" default="1440" java="true">
+                <option-description>
+                    <![CDATA[ Interval between cycling logs, in minutes.
+ ]]>
+                </option-description>
+            </option>
+            <option name="log-cycle-suffix" type="String" default=".\%u" java="true">
+                <option-description>
+                    <![CDATA[
+Suffix for cycled logs. This is passed through strftime (refer to your UNIX manual for
+ further information on strftime). The default of %%u results in a file beiang created for
+ each day of the week.
+]]>
+                </option-description>
+            </option>
+            <option name="log-cycle-offset" type="Integer" default="-1" java="true">
+                <option-description>
+                    <![CDATA[
+Specifies how many minutes to take off the current time when creating the suffix.
+ For example, if cycling at 0400 hours, the time passed into strftime to create the suffix will be
+ 0400 hours the previous day.
+]]>
+                </option-description>
+            </option>
+            <option name="log-max-history" type="Integer" default="10">
+                <option-description>
+                    <![CDATA[ Max number of log lines to retain for monitoring ]]>
+                </option-description>
+            </option>
+            <option name="log-use-parent-handlers" type="Boolean" default="FALSE" java="true">
+                <option-description>
+                    <![CDATA[ Parent handler ]]>
+                </option-description>
+            </option>
+            <group name="add-log">
+                <group-description>
+                    As well as the global configuration options for log files, individual log files may be configured
+                    individually. This option overrides the global default for a particular logfile.
+                    <b>Format:</b>
+                    \verbatim add-log name [value] maxsize [value] time [value] period [value] suffix [value] offset
+                    [value] level [value] monitor-level [value] end-log \endverbatim
+                </group-description>
+                <options>
+                    <option name="name" type="String" java="true">
+                        <option-description>
+                            <![CDATA[ Name of log ]]>
+                        </option-description>
+                    </option>
+                    <option name="maxsize" type="Integer" default="0" java="true">
+                        <option-description>
+                            <![CDATA[ Log file max size ]]>
+                        </option-description>
+                    </option>
+                    <option name="time" type="Integer" default="240" java="true">
+                        <option-description>
+                            <![CDATA[ Log Cycle Time ]]>
+                        </option-description>
+                    </option>
+                    <option name="period" type="Integer" default="1440" java="true">
+                        <option-description>
+                            <![CDATA[ Log Cycle Period ]]>
+                        </option-description>
+                    </option>
+                    <option name="suffix" type="String" default=".\%u" java="true">
+                        <option-description>
+                            <![CDATA[ Log Cycle Suffix ]]>
+                        </option-description>
+                    </option>
+                    <option name="offset" type="Integer" default="-1" java="true">
+                        <option-description>
+                            <![CDATA[ Log Cycle Offset ]]>
+                        </option-description>
+                    </option>
+                    <option name="level" type="String" java="true">
+                        <option-description>
+                            <![CDATA[ Log level ]]>
+                        </option-description>
+                    </option>
+                    <option name="monitor-level" type="String">
+                        <option-description>
+                            <![CDATA[ Log level to to push log events to monitoring ]]>
+                        </option-description>
+                    </option>
+                    <option name="use-parent-handlers" type="Boolean" default="FALSE" java="true">
+                        <option-description>
+                            <![CDATA[ Parent handlers ]]>
+                        </option-description>
+                    </option>
+                </options>
+            </group>
+        </options>
+    </page>
+</DSDK>

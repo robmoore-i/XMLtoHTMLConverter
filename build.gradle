@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+group = 'com.caplin'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('junit:junit:4.11')
+    compile('org.apache.velocity:velocity:1.7')
+    compile('commons-collections:commons-collections:3.2.1')
+    compile('commons-lang:commons-lang:2.6')
+}
+
+test {
+    testLogging {
+        events 'started', 'passed'
+    }
+}
+
+// gradle -Dtest.single=ConfigDocTest test

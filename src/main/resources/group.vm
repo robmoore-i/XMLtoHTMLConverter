@@ -1,0 +1,7 @@
+<h3>Group: $title</h3>
+$description
+<br/><br/>
+$body
+<br/>
+End of group: $title
+<br/>
