@@ -1,0 +1,2 @@
+I made this for Caplin in 2 weeks during Summer in 2013. It takes their XML Documents and converts them into HTML using
+apache velocity templates. This project used tests extensively and was also written with the intention of being clean code.
